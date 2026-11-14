@@ -1,0 +1,70 @@
+[
+  {
+    "id": "AST-001",
+    "name": "Ren Whitfield",
+    "missionId": "MSN-DEMO-A",
+    "missionPhase": "postflight",
+    "status": "active",
+    "notes": "DEMONSTRATION RECORD. Scripted pattern: gradual in-flight force decline, used to exercise the alert workflow.",
+    "profile": {
+      "force": 1,
+      "adherence": 0.92,
+      "decline": 0.15
+    },
+    "initials": "RW",
+    "createdAt": "2026-01-05T08:00:00.000Z",
+    "updatedAt": "2026-01-05T08:00:00.000Z",
+    "dataSource": "simulated"
+  },
+  {
+    "id": "AST-002",
+    "name": "Mira Castellan",
+    "missionId": "MSN-DEMO-A",
+    "missionPhase": "postflight",
+    "status": "active",
+    "notes": "DEMONSTRATION RECORD. Scripted pattern: post-mission follow-up with partial recovery.",
+    "profile": {
+      "force": 1.02,
+      "adherence": 0.9,
+      "decline": 0.08
+    },
+    "initials": "MC",
+    "createdAt": "2026-01-05T08:00:00.000Z",
+    "updatedAt": "2026-01-05T08:00:00.000Z",
+    "dataSource": "simulated"
+  },
+  {
+    "id": "AST-003",
+    "name": "Tobias Lindqvist",
+    "missionId": "MSN-DEMO-B",
+    "missionPhase": "postflight",
+    "status": "active",
+    "notes": "DEMONSTRATION RECORD. Scripted pattern: low adherence with a run of missed sessions.",
+    "profile": {
+      "force": 0.97,
+      "adherence": 0.7,
+      "decline": 0
+    },
+    "initials": "TL",
+    "createdAt": "2026-01-05T08:00:00.000Z",
+    "updatedAt": "2026-01-05T08:00:00.000Z",
+    "dataSource": "simulated"
+  },
+  {
+    "id": "AST-004",
+    "name": "Priya Raman",
+    "missionId": "MSN-DEMO-B",
+    "missionPhase": "preflight",
+    "status": "active",
+    "notes": "DEMONSTRATION RECORD. Preflight baseline only.",
+    "profile": {
+      "force": 1.05,
+      "adherence": 0.95,
+      "decline": 0
+    },
+    "initials": "PR",
+    "createdAt": "2026-01-05T08:00:00.000Z",
+    "updatedAt": "2026-01-05T08:00:00.000Z",
+    "dataSource": "simulated"
+  }
+]

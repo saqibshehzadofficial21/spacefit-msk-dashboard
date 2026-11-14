@@ -1,0 +1,38 @@
+[
+  {
+    "id": "AUD-SEED",
+    "timestamp": "2026-11-14T07:28:35.256Z",
+    "role": "system",
+    "action": "seed",
+    "entity": "all",
+    "entityId": "-",
+    "summary": "Demonstration data generated (fictional, simulated)"
+  },
+  {
+    "id": "AUD-07880889-20c0-4f8f-b9e2-5a7799b36371",
+    "timestamp": "2026-11-14T07:29:47.321Z",
+    "role": "administrator",
+    "action": "generate",
+    "entity": "report",
+    "entityId": "RPT-a77f2993-57b8-4787-8bef-0fd552164e21",
+    "summary": "muscle-performance: 1884 records"
+  },
+  {
+    "id": "AUD-71a65af4-8f13-45e8-98a8-0404a1c0efd1",
+    "timestamp": "2026-11-14T08:43:05.675Z",
+    "role": "medical-specialist",
+    "action": "analyse",
+    "entity": "insight",
+    "entityId": "AST-004",
+    "summary": "run RUN-1eb0e866-199a-4159-9a76-06cbf7467e43: 9 insights, 0 alerts"
+  },
+  {
+    "id": "AUD-400959e4-b61a-4fd4-a83c-ab8f00bdd345",
+    "timestamp": "2026-11-14T08:43:14.529Z",
+    "role": "medical-specialist",
+    "action": "generate",
+    "entity": "report",
+    "entityId": "RPT-78dc6d35-8c75-4fd0-9c45-eb84e01cf72b",
+    "summary": "muscle-performance: 1884 records"
+  }
+]

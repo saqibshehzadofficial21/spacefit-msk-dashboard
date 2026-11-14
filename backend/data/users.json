@@ -1,0 +1,23 @@
+[
+  {
+    "id": "USR-ADM-01",
+    "name": "Demo Administrator",
+    "role": "administrator",
+    "description": "Full prototype access, including astronaut deletion, mission management and settings.",
+    "dataSource": "simulated"
+  },
+  {
+    "id": "USR-SPC-01",
+    "name": "Demo Medical Specialist",
+    "role": "medical-specialist",
+    "description": "Records, baselines, alert review and specialist notes. Cannot delete astronauts or change thresholds.",
+    "dataSource": "simulated"
+  },
+  {
+    "id": "USR-AST-01",
+    "name": "Demo Astronaut View",
+    "role": "astronaut",
+    "description": "Read access and self-logged exercise records. Cannot review alerts or change analysis thresholds.",
+    "dataSource": "simulated"
+  }
+]

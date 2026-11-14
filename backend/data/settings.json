@@ -1,0 +1,48 @@
+{
+  "id": "settings",
+  "profile": {
+    "displayName": "Prototype Operator",
+    "role": "administrator",
+    "organisation": "Demonstration workspace (not an official deployment)"
+  },
+  "preferences": {
+    "defaultMissionPhase": "all",
+    "defaultDateRangeDays": 90,
+    "compactTables": false
+  },
+  "notifications": {
+    "minimumSeverity": "attention",
+    "showToasts": true
+  },
+  "thresholds": {
+    "thresholdsNotice": "CONFIGURABLE SAMPLE LOGIC FOR DEMONSTRATION. These values are not NASA-approved, not clinical limits and must be set by an authorised specialist before any real use.",
+    "forceProduction": {
+      "percentChange": -10
+    },
+    "movementVelocity": {
+      "percentChange": -10
+    },
+    "jointROM": {
+      "percentChange": -10
+    },
+    "repetitionPerformance": {
+      "percentChange": -15
+    },
+    "movementConsistency": {
+      "pointsChange": -5
+    },
+    "functionalScore": {
+      "percentChange": -10
+    },
+    "loadingChange": {
+      "percentChange": 15
+    },
+    "adherence": {
+      "minimumPercent": 80,
+      "windowDays": 14,
+      "consecutiveMissedSessions": 3
+    },
+    "persistentAssessments": 3
+  },
+  "updatedAt": null
+}

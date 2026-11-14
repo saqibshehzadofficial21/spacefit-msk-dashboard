@@ -1,0 +1,26 @@
+import { Router } from 'express';
+import astronautRoutes from './astronautRoutes.js';
+import missionRoutes from './missionRoutes.js';
+import baselineRoutes from './baselineRoutes.js';
+import performanceRoutes from './performanceRoutes.js';
+import exerciseRoutes from './exerciseRoutes.js';
+import sensorRoutes from './sensorRoutes.js';
+import insightRoutes from './insightRoutes.js';
+import alertRoutes from './alertRoutes.js';
+import reportRoutes from './reportRoutes.js';
+import dashboardRoutes from './dashboardRoutes.js';
+import settingsRoutes from './settingsRoutes.js';
+
+const router = Router();
+router.use('/astronauts', astronautRoutes);
+router.use('/missions', missionRoutes);
+router.use('/baselines', baselineRoutes);
+router.use('/performance', performanceRoutes);
+router.use('/exercises', exerciseRoutes);
+router.use('/sensors', sensorRoutes);
+router.use('/insights', insightRoutes);
+router.use('/alerts', alertRoutes);
+router.use('/reports', reportRoutes);
+router.use('/dashboard', dashboardRoutes);
+router.use('/settings', settingsRoutes);
+export default router;

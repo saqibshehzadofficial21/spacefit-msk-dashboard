@@ -1,0 +1,3068 @@
+[
+  {
+    "id": "RPT-f140a5c7-b32a-4c29-9e7d-606181430772",
+    "reportType": "exercise-adherence",
+    "title": "Exercise Adherence Report",
+    "generatedAt": "2026-11-14T07:28:35.288Z",
+    "generatedBy": "system",
+    "filters": {
+      "astronautId": "all",
+      "missionId": "all",
+      "missionPhase": "all",
+      "startDate": null,
+      "endDate": null,
+      "equipment": "all",
+      "category": "all",
+      "metric": "all"
+    },
+    "scope": {
+      "astronaut": "All astronauts (4 in scope)",
+      "mission": "All missions",
+      "missionPhase": "All phases",
+      "period": "All recorded dates",
+      "equipment": "All equipment",
+      "category": "All categories",
+      "metric": "All metrics"
+    },
+    "kpis": [
+      {
+        "label": "Prescribed sessions",
+        "value": 315
+      },
+      {
+        "label": "Overall adherence (%)",
+        "value": 90.8
+      }
+    ],
+    "sections": [
+      {
+        "title": "Adherence by astronaut and mission phase",
+        "columns": [
+          "Astronaut",
+          "Phase",
+          "Prescribed",
+          "Completed",
+          "Missed",
+          "Adherence (%)"
+        ],
+        "rows": [
+          [
+            "Ren Whitfield",
+            "preflight",
+            24,
+            23,
+            1,
+            95.8
+          ],
+          [
+            "Ren Whitfield",
+            "in-flight",
+            52,
+            52,
+            0,
+            100
+          ],
+          [
+            "Ren Whitfield",
+            "postflight",
+            20,
+            20,
+            0,
+            100
+          ],
+          [
+            "Mira Castellan",
+            "preflight",
+            24,
+            24,
+            0,
+            100
+          ],
+          [
+            "Mira Castellan",
+            "in-flight",
+            52,
+            51,
+            1,
+            98.1
+          ],
+          [
+            "Mira Castellan",
+            "postflight",
+            20,
+            19,
+            1,
+            95
+          ],
+          [
+            "Tobias Lindqvist",
+            "preflight",
+            27,
+            19,
+            8,
+            70.4
+          ],
+          [
+            "Tobias Lindqvist",
+            "in-flight",
+            58,
+            44,
+            14,
+            75.9
+          ],
+          [
+            "Tobias Lindqvist",
+            "postflight",
+            11,
+            8,
+            3,
+            72.7
+          ],
+          [
+            "Priya Raman",
+            "preflight",
+            27,
+            26,
+            0,
+            96.3
+          ]
+        ],
+        "totalRows": 10,
+        "truncated": false
+      }
+    ],
+    "notes": [
+      "Only stored records are included. Demonstration data is labelled \"Simulated demonstration data\" in the data-source summary. This report is a prototype output and is not a clinical document."
+    ],
+    "dataSourceSummary": [
+      {
+        "key": "simulated",
+        "label": "Simulated demonstration data",
+        "count": 1884
+      }
+    ],
+    "recordCount": 1884
+  },
+  {
+    "id": "RPT-dffea7f6-4b4c-40d0-ad07-46387cf07cc4",
+    "reportType": "muscle-performance",
+    "title": "Muscle Performance Report",
+    "generatedAt": "2026-11-14T07:28:35.295Z",
+    "generatedBy": "system",
+    "filters": {
+      "astronautId": "all",
+      "missionId": "all",
+      "missionPhase": "all",
+      "startDate": null,
+      "endDate": null,
+      "equipment": "all",
+      "category": "all",
+      "metric": "all"
+    },
+    "scope": {
+      "astronaut": "All astronauts (4 in scope)",
+      "mission": "All missions",
+      "missionPhase": "All phases",
+      "period": "All recorded dates",
+      "equipment": "All equipment",
+      "category": "All categories",
+      "metric": "All metrics"
+    },
+    "kpis": [
+      {
+        "label": "Assessments in period",
+        "value": 38
+      },
+      {
+        "label": "Baseline records",
+        "value": 4
+      }
+    ],
+    "sections": [
+      {
+        "title": "Muscle performance summary",
+        "columns": [
+          "Astronaut",
+          "Metric",
+          "Unit",
+          "Baseline (date)",
+          "Latest measurement (date)",
+          "Difference",
+          "% change",
+          "Trend",
+          "Records"
+        ],
+        "rows": [
+          [
+            "Ren Whitfield",
+            "Force production",
+            "N",
+            "115.55 (2026-01-15)",
+            "99.44 (2026-08-03)",
+            -16.11,
+            -13.9,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Movement velocity",
+            "m/s",
+            "0.84 (2026-01-15)",
+            "0.75 (2026-08-03)",
+            -0.09,
+            -10.7,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Joint range of motion",
+            "degrees",
+            "137.78 (2026-01-15)",
+            "128.63 (2026-08-03)",
+            -9.15,
+            -6.6,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-01-15)",
+            "9 (2026-08-03)",
+            -1,
+            -10,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Movement consistency",
+            "%",
+            "90.88 (2026-01-15)",
+            "88.01 (2026-08-03)",
+            -2.87,
+            "n/a (points metric)",
+            "stable",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "78.33 (2026-01-15)",
+            "71.28 (2026-08-03)",
+            -7.05,
+            -9,
+            "falling",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Force production",
+            "N",
+            "127.04 (2026-01-15)",
+            "125.44 (2026-08-03)",
+            -1.6,
+            -1.3,
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Movement velocity",
+            "m/s",
+            "0.88 (2026-01-15)",
+            "0.89 (2026-08-03)",
+            0.01,
+            1.1,
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Joint range of motion",
+            "degrees",
+            "130.01 (2026-01-15)",
+            "130.91 (2026-08-03)",
+            0.9,
+            0.7,
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-01-15)",
+            "10 (2026-08-03)",
+            0,
+            0,
+            "falling",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Movement consistency",
+            "%",
+            "93 (2026-01-15)",
+            "92.85 (2026-08-03)",
+            -0.15,
+            "n/a (points metric)",
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "78.88 (2026-01-15)",
+            "78.88 (2026-08-03)",
+            0,
+            0,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Force production",
+            "N",
+            "118.41 (2026-04-11)",
+            "118.58 (2026-11-18)",
+            0.17,
+            0.1,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Movement velocity",
+            "m/s",
+            "0.87 (2026-04-11)",
+            "0.86 (2026-11-18)",
+            -0.01,
+            -1.1,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Joint range of motion",
+            "degrees",
+            "138.44 (2026-04-11)",
+            "137.93 (2026-11-18)",
+            -0.51,
+            -0.4,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-04-11)",
+            "10 (2026-11-18)",
+            0,
+            0,
+            "falling",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Movement consistency",
+            "%",
+            "90.75 (2026-04-11)",
+            "90.49 (2026-11-18)",
+            -0.26,
+            "n/a (points metric)",
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "82.18 (2026-04-11)",
+            "82.18 (2026-11-18)",
+            0,
+            0,
+            "stable",
+            12
+          ],
+          [
+            "Priya Raman",
+            "Force production",
+            "N",
+            "124.75 (2026-04-11)",
+            "124.81 (2026-05-05)",
+            0.06,
+            0,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Movement velocity",
+            "m/s",
+            "0.84 (2026-04-11)",
+            "0.85 (2026-05-05)",
+            0.01,
+            1.2,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Joint range of motion",
+            "degrees",
+            "132 (2026-04-11)",
+            "132.74 (2026-05-05)",
+            0.74,
+            0.6,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-04-11)",
+            "10 (2026-05-05)",
+            0,
+            0,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Movement consistency",
+            "%",
+            "90.49 (2026-04-11)",
+            "90.25 (2026-05-05)",
+            -0.24,
+            "n/a (points metric)",
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "77.53 (2026-04-11)",
+            "77.53 (2026-05-05)",
+            0,
+            0,
+            "insufficient-data",
+            2
+          ]
+        ],
+        "totalRows": 24,
+        "truncated": false
+      },
+      {
+        "title": "Performance assessment records",
+        "columns": [
+          "Date",
+          "Astronaut",
+          "Phase",
+          "Force production",
+          "Movement velocity",
+          "Joint range of motion",
+          "Repetition performance",
+          "Movement consistency",
+          "Functional assessment score",
+          "Data source"
+        ],
+        "rows": [
+          [
+            "2026-11-18",
+            "Tobias Lindqvist",
+            "postflight",
+            118.58,
+            0.86,
+            137.93,
+            10,
+            90.49,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-11-04",
+            "Tobias Lindqvist",
+            "postflight",
+            117.7,
+            0.87,
+            138.37,
+            10,
+            90.44,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-10-21",
+            "Tobias Lindqvist",
+            "postflight",
+            117.58,
+            0.88,
+            138.16,
+            10,
+            91.04,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-08-28",
+            "Tobias Lindqvist",
+            "in-flight",
+            117.03,
+            0.87,
+            138.1,
+            10,
+            90.56,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-08-15",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.8,
+            0.88,
+            139.44,
+            10,
+            90.78,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-08-03",
+            "Mira Castellan",
+            "postflight",
+            125.44,
+            0.89,
+            130.91,
+            10,
+            92.85,
+            78.88,
+            "simulated"
+          ],
+          [
+            "2026-08-03",
+            "Ren Whitfield",
+            "postflight",
+            99.44,
+            0.75,
+            128.63,
+            9,
+            88.01,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-08-02",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.52,
+            0.88,
+            137.37,
+            10,
+            90.84,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-07-20",
+            "Mira Castellan",
+            "postflight",
+            124.12,
+            0.87,
+            129,
+            10,
+            92.49,
+            77.61,
+            "simulated"
+          ],
+          [
+            "2026-07-20",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.19,
+            0.88,
+            137.22,
+            10,
+            90.97,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-07-20",
+            "Ren Whitfield",
+            "postflight",
+            98,
+            0.75,
+            126.19,
+            8,
+            88.21,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-07-07",
+            "Tobias Lindqvist",
+            "in-flight",
+            119.13,
+            0.87,
+            137.39,
+            10,
+            91.21,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-07-06",
+            "Ren Whitfield",
+            "postflight",
+            98.64,
+            0.74,
+            126.54,
+            9,
+            88.3,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-07-06",
+            "Mira Castellan",
+            "postflight",
+            118.87,
+            0.85,
+            126.69,
+            9,
+            92.17,
+            76.35,
+            "simulated"
+          ],
+          [
+            "2026-06-24",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.63,
+            0.87,
+            137.29,
+            11,
+            90.25,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-06-11",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.24,
+            0.87,
+            137.9,
+            10,
+            91.02,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-05-29",
+            "Mira Castellan",
+            "in-flight",
+            115.46,
+            0.81,
+            125.12,
+            10,
+            91.45,
+            75.09,
+            "simulated"
+          ],
+          [
+            "2026-05-29",
+            "Ren Whitfield",
+            "in-flight",
+            98.88,
+            0.73,
+            128.35,
+            9,
+            87.78,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-05-16",
+            "Mira Castellan",
+            "in-flight",
+            115.89,
+            0.83,
+            124.76,
+            9,
+            91.87,
+            75.09,
+            "simulated"
+          ],
+          [
+            "2026-05-16",
+            "Ren Whitfield",
+            "in-flight",
+            97.68,
+            0.75,
+            127.71,
+            9,
+            87.92,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-05-05",
+            "Priya Raman",
+            "preflight",
+            124.81,
+            0.85,
+            132.74,
+            10,
+            90.25,
+            77.53,
+            "simulated"
+          ],
+          [
+            "2026-05-05",
+            "Tobias Lindqvist",
+            "preflight",
+            117.21,
+            0.87,
+            139.7,
+            10,
+            90.61,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-05-03",
+            "Mira Castellan",
+            "in-flight",
+            118.15,
+            0.83,
+            124.57,
+            10,
+            92.01,
+            75.09,
+            "simulated"
+          ],
+          [
+            "2026-05-03",
+            "Ren Whitfield",
+            "in-flight",
+            96.77,
+            0.73,
+            127.96,
+            8,
+            88.28,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-04-21",
+            "Tobias Lindqvist",
+            "preflight",
+            119.86,
+            0.88,
+            139.32,
+            11,
+            90.69,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-04-21",
+            "Priya Raman",
+            "preflight",
+            125.28,
+            0.84,
+            131.04,
+            10,
+            90.81,
+            77.53,
+            "simulated"
+          ],
+          [
+            "2026-04-20",
+            "Ren Whitfield",
+            "in-flight",
+            101.85,
+            0.77,
+            129.9,
+            8,
+            88.31,
+            72.29,
+            "simulated"
+          ],
+          [
+            "2026-04-20",
+            "Mira Castellan",
+            "in-flight",
+            119.08,
+            0.84,
+            126.13,
+            10,
+            91.95,
+            75.63,
+            "simulated"
+          ],
+          [
+            "2026-04-07",
+            "Ren Whitfield",
+            "in-flight",
+            103.87,
+            0.77,
+            131.93,
+            8,
+            88.9,
+            73.8,
+            "simulated"
+          ],
+          [
+            "2026-04-07",
+            "Mira Castellan",
+            "in-flight",
+            120.02,
+            0.83,
+            125.82,
+            9,
+            91.77,
+            76.44,
+            "simulated"
+          ],
+          [
+            "2026-03-25",
+            "Mira Castellan",
+            "in-flight",
+            122.72,
+            0.86,
+            127.96,
+            10,
+            92.75,
+            77.25,
+            "simulated"
+          ],
+          [
+            "2026-03-25",
+            "Ren Whitfield",
+            "in-flight",
+            108.15,
+            0.79,
+            133.23,
+            9,
+            90.03,
+            75.31,
+            "simulated"
+          ],
+          [
+            "2026-03-12",
+            "Mira Castellan",
+            "in-flight",
+            123.24,
+            0.86,
+            128.05,
+            10,
+            92.48,
+            78.07,
+            "simulated"
+          ],
+          [
+            "2026-03-12",
+            "Ren Whitfield",
+            "in-flight",
+            112.73,
+            0.81,
+            134.83,
+            10,
+            90.43,
+            76.82,
+            "simulated"
+          ],
+          [
+            "2026-02-08",
+            "Mira Castellan",
+            "preflight",
+            127.44,
+            0.88,
+            129.61,
+            10,
+            92.86,
+            78.88,
+            "simulated"
+          ],
+          [
+            "2026-02-08",
+            "Ren Whitfield",
+            "preflight",
+            114.14,
+            0.83,
+            137.67,
+            10,
+            91,
+            78.33,
+            "simulated"
+          ],
+          [
+            "2026-01-25",
+            "Mira Castellan",
+            "preflight",
+            126.51,
+            0.87,
+            129.38,
+            11,
+            93.17,
+            78.88,
+            "simulated"
+          ],
+          [
+            "2026-01-25",
+            "Ren Whitfield",
+            "preflight",
+            114.56,
+            0.85,
+            137.54,
+            9,
+            90.4,
+            78.33,
+            "simulated"
+          ]
+        ],
+        "totalRows": 38,
+        "truncated": false
+      }
+    ],
+    "notes": [
+      "Force, velocity, ROM, repetition and functional metrics are compared as percentages; movement consistency as percentage points. A higher or lower value is not by itself evidence of health or disease.",
+      "Only stored records are included. Demonstration data is labelled \"Simulated demonstration data\" in the data-source summary. This report is a prototype output and is not a clinical document."
+    ],
+    "dataSourceSummary": [
+      {
+        "key": "simulated",
+        "label": "Simulated demonstration data",
+        "count": 1884
+      }
+    ],
+    "recordCount": 1884
+  },
+  {
+    "id": "RPT-ae37080d-3a53-49c9-b2d9-a10e6699814f",
+    "reportType": "adaptive-insights",
+    "title": "Adaptive Insights Report",
+    "generatedAt": "2026-11-14T07:28:35.303Z",
+    "generatedBy": "system",
+    "filters": {
+      "astronautId": "all",
+      "missionId": "all",
+      "missionPhase": "all",
+      "startDate": null,
+      "endDate": null,
+      "equipment": "all",
+      "category": "all",
+      "metric": "all"
+    },
+    "scope": {
+      "astronaut": "All astronauts (4 in scope)",
+      "mission": "All missions",
+      "missionPhase": "All phases",
+      "period": "All recorded dates",
+      "equipment": "All equipment",
+      "category": "All categories",
+      "metric": "All metrics"
+    },
+    "kpis": [
+      {
+        "label": "Insights",
+        "value": 36
+      },
+      {
+        "label": "Attention or critical",
+        "value": 3
+      }
+    ],
+    "sections": [
+      {
+        "title": "Adaptive insights",
+        "columns": [
+          "Insight ID",
+          "Astronaut",
+          "Metric",
+          "Baseline",
+          "Current",
+          "Difference",
+          "% change",
+          "Severity",
+          "Review status",
+          "Explanation"
+        ],
+        "rows": [
+          [
+            "INS-b40e5eff-0cd9-42fc-b7cb-359114ad45df",
+            "Tobias Lindqvist",
+            "Functional assessment score",
+            82.18,
+            82.18,
+            0,
+            0,
+            "normal",
+            "unreviewed",
+            "The latest functional assessment score measurement is 82.18 points (protocol-defined), which is 0% above this astronaut's own baseline of 82.18 points (protocol-defined). Configured sample threshold: -10%. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-01c43da5-f94d-4dc6-89af-7221b7cd3df8",
+            "Tobias Lindqvist",
+            "Movement consistency",
+            90.75,
+            90.49,
+            -0.26,
+            "—",
+            "normal",
+            "unreviewed",
+            "The latest movement consistency measurement is 90.49 %, which is 0.26 percentage points below this astronaut's own baseline of 90.75 %. Configured sample threshold: -5 percentage points. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-5fe9e199-c00e-46b2-9c49-48405bd79ba2",
+            "Tobias Lindqvist",
+            "Repetition performance",
+            10,
+            10,
+            0,
+            0,
+            "normal",
+            "unreviewed",
+            "The latest repetition performance measurement is 10 repetitions, which is 0% above this astronaut's own baseline of 10 repetitions. Configured sample threshold: -15%. This is within the configured threshold. Trend across 12 measurement(s): falling. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-af1d67b6-be7a-4976-bb2d-c94318a570c0",
+            "Tobias Lindqvist",
+            "Joint range of motion",
+            138.44,
+            137.93,
+            -0.51,
+            -0.4,
+            "normal",
+            "unreviewed",
+            "The latest joint range of motion measurement is 137.93 degrees, which is 0.4% below this astronaut's own baseline of 138.44 degrees. Configured sample threshold: -10%. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-28b7d334-530a-4422-99b3-95c2d9876c26",
+            "Tobias Lindqvist",
+            "Movement velocity",
+            0.87,
+            0.86,
+            -0.01,
+            -1.1,
+            "normal",
+            "unreviewed",
+            "The latest movement velocity measurement is 0.86 m/s, which is 1.1% below this astronaut's own baseline of 0.87 m/s. Configured sample threshold: -10%. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-c0e53b06-84c2-4908-a6da-1767147ed0d9",
+            "Tobias Lindqvist",
+            "Force production",
+            118.41,
+            118.58,
+            0.17,
+            0.1,
+            "normal",
+            "unreviewed",
+            "The latest force production measurement is 118.58 N, which is 0.1% above this astronaut's own baseline of 118.41 N. Configured sample threshold: -10%. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-c0355646-9791-4892-b71d-131fd5a5a254",
+            "Tobias Lindqvist",
+            "Exercise adherence",
+            80,
+            71.4,
+            -8.6,
+            "—",
+            "attention",
+            "unreviewed",
+            "In the 14 days to the latest prescribed session, 5 of 7 prescribed sessions were completed (71.4% adherence). Configured sample minimum: 80%. Adherence is below the configured minimum. Missed sessions can have many causes; this does not indicate a medical condition."
+          ],
+          [
+            "INS-27f020dd-e363-449e-b194-520128b500b4",
+            "Tobias Lindqvist",
+            "Peak plantar pressure (loading)",
+            219.97,
+            223.64,
+            3.67,
+            1.7,
+            "normal",
+            "unreviewed",
+            "The mean of the latest 5 sensor values is 223.64 kPa, compared with 219.97 kPa from preflight sensor records, a change of +1.7%. Configured sample threshold: ±15%. No change past the configured threshold. Sensor values describe loading only; they do not measure bone or muscle tissue."
+          ],
+          [
+            "INS-122d3dab-6fa0-4402-8b7a-23e507859f10",
+            "Tobias Lindqvist",
+            "Applied force (loading)",
+            120.33,
+            119.87,
+            -0.47,
+            -0.4,
+            "normal",
+            "unreviewed",
+            "The mean of the latest 5 sensor values is 119.87 N, compared with 120.33 N from preflight sensor records, a change of -0.4%. Configured sample threshold: ±15%. No change past the configured threshold. Sensor values describe loading only; they do not measure bone or muscle tissue."
+          ],
+          [
+            "INS-d4d73e10-1bbd-47b5-a83d-f80f9d3c0035",
+            "Mira Castellan",
+            "Exercise adherence",
+            80,
+            83.3,
+            3.3,
+            "—",
+            "normal",
+            "unreviewed",
+            "In the 14 days to the latest prescribed session, 5 of 6 prescribed sessions were completed (83.3% adherence). Configured sample minimum: 80%. Adherence meets the configured minimum. Missed sessions can have many causes; this does not indicate a medical condition."
+          ],
+          [
+            "INS-1a6a0652-a9f9-46a6-8f46-a58981525843",
+            "Mira Castellan",
+            "Peak plantar pressure (loading)",
+            217.27,
+            217.93,
+            0.66,
+            0.3,
+            "normal",
+            "unreviewed",
+            "The mean of the latest 5 sensor values is 217.93 kPa, compared with 217.27 kPa from preflight sensor records, a change of +0.3%. Configured sample threshold: ±15%. No change past the configured threshold. Sensor values describe loading only; they do not measure bone or muscle tissue."
+          ],
+          [
+            "INS-356c7a5b-a54c-429a-8aa9-3a5306c6608e",
+            "Mira Castellan",
+            "Applied force (loading)",
+            120.35,
+            119.69,
+            -0.66,
+            -0.5,
+            "normal",
+            "unreviewed",
+            "The mean of the latest 5 sensor values is 119.69 N, compared with 120.35 N from preflight sensor records, a change of -0.5%. Configured sample threshold: ±15%. No change past the configured threshold. Sensor values describe loading only; they do not measure bone or muscle tissue."
+          ],
+          [
+            "INS-1dc17074-1c4b-4012-ab1c-32fc74f52aa4",
+            "Ren Whitfield",
+            "Peak plantar pressure (loading)",
+            218.5,
+            221.28,
+            2.78,
+            1.3,
+            "normal",
+            "unreviewed",
+            "The mean of the latest 5 sensor values is 221.28 kPa, compared with 218.5 kPa from preflight sensor records, a change of +1.3%. Configured sample threshold: ±15%. No change past the configured threshold. Sensor values describe loading only; they do not measure bone or muscle tissue."
+          ],
+          [
+            "INS-82ef9f05-67cd-4021-90e3-e45b7ae3f994",
+            "Ren Whitfield",
+            "Applied force (loading)",
+            119.75,
+            121.13,
+            1.38,
+            1.2,
+            "normal",
+            "unreviewed",
+            "The mean of the latest 5 sensor values is 121.13 N, compared with 119.75 N from preflight sensor records, a change of +1.2%. Configured sample threshold: ±15%. No change past the configured threshold. Sensor values describe loading only; they do not measure bone or muscle tissue."
+          ],
+          [
+            "INS-d4bc8181-bd8f-43bb-8eec-574e06b413b4",
+            "Ren Whitfield",
+            "Exercise adherence",
+            80,
+            100,
+            20,
+            "—",
+            "normal",
+            "unreviewed",
+            "In the 14 days to the latest prescribed session, 7 of 7 prescribed sessions were completed (100% adherence). Configured sample minimum: 80%. Adherence meets the configured minimum. Missed sessions can have many causes; this does not indicate a medical condition."
+          ],
+          [
+            "INS-78bc7740-e05c-44bb-8592-953f0264ed85",
+            "Mira Castellan",
+            "Functional assessment score",
+            78.88,
+            78.88,
+            0,
+            0,
+            "normal",
+            "unreviewed",
+            "The latest functional assessment score measurement is 78.88 points (protocol-defined), which is 0% above this astronaut's own baseline of 78.88 points (protocol-defined). Configured sample threshold: -10%. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-c6bb13b8-4464-4e6b-89db-279f71c9d1d8",
+            "Mira Castellan",
+            "Movement consistency",
+            93,
+            92.85,
+            -0.15,
+            "—",
+            "normal",
+            "unreviewed",
+            "The latest movement consistency measurement is 92.85 %, which is 0.15 percentage points below this astronaut's own baseline of 93 %. Configured sample threshold: -5 percentage points. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-b7f2243f-7d65-4edd-8171-fe7c58b18799",
+            "Mira Castellan",
+            "Repetition performance",
+            10,
+            10,
+            0,
+            0,
+            "normal",
+            "unreviewed",
+            "The latest repetition performance measurement is 10 repetitions, which is 0% above this astronaut's own baseline of 10 repetitions. Configured sample threshold: -15%. This is within the configured threshold. Trend across 12 measurement(s): falling. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-1250b8f8-e990-476c-bbc0-bf1aaf30b9e4",
+            "Mira Castellan",
+            "Joint range of motion",
+            130.01,
+            130.91,
+            0.9,
+            0.7,
+            "normal",
+            "unreviewed",
+            "The latest joint range of motion measurement is 130.91 degrees, which is 0.7% above this astronaut's own baseline of 130.01 degrees. Configured sample threshold: -10%. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-98ca68f4-3f22-459a-b08a-8f7f7e522545",
+            "Mira Castellan",
+            "Movement velocity",
+            0.88,
+            0.89,
+            0.01,
+            1.1,
+            "normal",
+            "unreviewed",
+            "The latest movement velocity measurement is 0.89 m/s, which is 1.1% above this astronaut's own baseline of 0.88 m/s. Configured sample threshold: -10%. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-6473592a-55c5-4648-a5c5-fc801dfb58d3",
+            "Mira Castellan",
+            "Force production",
+            127.04,
+            125.44,
+            -1.6,
+            -1.3,
+            "normal",
+            "unreviewed",
+            "The latest force production measurement is 125.44 N, which is 1.3% below this astronaut's own baseline of 127.04 N. Configured sample threshold: -10%. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-8730f10e-42ee-4294-b515-cdfa4184e799",
+            "Ren Whitfield",
+            "Functional assessment score",
+            78.33,
+            71.28,
+            -7.05,
+            -9,
+            "normal",
+            "unreviewed",
+            "The latest functional assessment score measurement is 71.28 points (protocol-defined), which is 9% below this astronaut's own baseline of 78.33 points (protocol-defined). Configured sample threshold: -10%. This is within the configured threshold. Trend across 12 measurement(s): falling. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-e067e94c-d987-4b90-a6d4-77e3aff1ca47",
+            "Ren Whitfield",
+            "Movement consistency",
+            90.88,
+            88.01,
+            -2.87,
+            "—",
+            "normal",
+            "unreviewed",
+            "The latest movement consistency measurement is 88.01 %, which is 2.87 percentage points below this astronaut's own baseline of 90.88 %. Configured sample threshold: -5 percentage points. This is within the configured threshold. Trend across 12 measurement(s): stable. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-56daf4fb-dc5e-4ab2-bd36-6d1841da5a84",
+            "Ren Whitfield",
+            "Repetition performance",
+            10,
+            9,
+            -1,
+            -10,
+            "normal",
+            "unreviewed",
+            "The latest repetition performance measurement is 9 repetitions, which is 10% below this astronaut's own baseline of 10 repetitions. Configured sample threshold: -15%. This is within the configured threshold. Trend across 12 measurement(s): falling. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-bd8d1baa-9005-42d2-88c3-8be58f2f943e",
+            "Ren Whitfield",
+            "Joint range of motion",
+            137.78,
+            128.63,
+            -9.15,
+            -6.6,
+            "normal",
+            "unreviewed",
+            "The latest joint range of motion measurement is 128.63 degrees, which is 6.6% below this astronaut's own baseline of 137.78 degrees. Configured sample threshold: -10%. This is within the configured threshold. Trend across 12 measurement(s): falling. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-d41ae73f-3f99-4bee-b16d-cef8892104ee",
+            "Ren Whitfield",
+            "Movement velocity",
+            0.84,
+            0.75,
+            -0.09,
+            -10.7,
+            "critical",
+            "unreviewed",
+            "The latest movement velocity measurement is 0.75 m/s, which is 10.7% below this astronaut's own baseline of 0.84 m/s. Configured sample threshold: -10%. This is past the threshold in 6 consecutive assessments. Trend across 12 measurement(s): falling. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-06d70b28-c05e-4a9f-8f16-f928e7d5b636",
+            "Ren Whitfield",
+            "Force production",
+            115.55,
+            99.44,
+            -16.11,
+            -13.9,
+            "critical",
+            "unreviewed",
+            "The latest force production measurement is 99.44 N, which is 13.9% below this astronaut's own baseline of 115.55 N. Configured sample threshold: -10%. This is past the threshold in 8 consecutive assessments. Trend across 12 measurement(s): falling. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-e3cad948-f603-49e6-98bf-5a9f150e87d1",
+            "Priya Raman",
+            "Exercise adherence",
+            80,
+            100,
+            20,
+            "—",
+            "normal",
+            "unreviewed",
+            "In the 14 days to the latest prescribed session, 6 of 6 prescribed sessions were completed (100% adherence). Configured sample minimum: 80%. Adherence meets the configured minimum. Missed sessions can have many causes; this does not indicate a medical condition."
+          ],
+          [
+            "INS-9a0c4369-8e0a-4692-918b-cf507f9a23c5",
+            "Priya Raman",
+            "Peak plantar pressure (loading)",
+            221.57,
+            220.01,
+            -1.56,
+            -0.7,
+            "normal",
+            "unreviewed",
+            "The mean of the latest 5 sensor values is 220.01 kPa, compared with 221.57 kPa from preflight sensor records, a change of -0.7%. Configured sample threshold: ±15%. No change past the configured threshold. Sensor values describe loading only; they do not measure bone or muscle tissue."
+          ],
+          [
+            "INS-8a8a7a3e-e312-4e14-9cea-e29841aa1c35",
+            "Priya Raman",
+            "Applied force (loading)",
+            119.66,
+            119.21,
+            -0.45,
+            -0.4,
+            "normal",
+            "unreviewed",
+            "The mean of the latest 5 sensor values is 119.21 N, compared with 119.66 N from preflight sensor records, a change of -0.4%. Configured sample threshold: ±15%. No change past the configured threshold. Sensor values describe loading only; they do not measure bone or muscle tissue."
+          ],
+          [
+            "INS-cf17cbf0-cbe9-459b-9614-db3fca277abf",
+            "Priya Raman",
+            "Functional assessment score",
+            77.53,
+            77.53,
+            0,
+            0,
+            "normal",
+            "unreviewed",
+            "The latest functional assessment score measurement is 77.53 points (protocol-defined), which is 0% above this astronaut's own baseline of 77.53 points (protocol-defined). Configured sample threshold: -10%. This is within the configured threshold. Trend across 2 measurement(s): insufficient-data. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-aef64532-1b97-4783-83ff-a381fddc7acb",
+            "Priya Raman",
+            "Movement consistency",
+            90.49,
+            90.25,
+            -0.24,
+            "—",
+            "normal",
+            "unreviewed",
+            "The latest movement consistency measurement is 90.25 %, which is 0.24 percentage points below this astronaut's own baseline of 90.49 %. Configured sample threshold: -5 percentage points. This is within the configured threshold. Trend across 2 measurement(s): insufficient-data. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-b282a3ce-9331-485f-89e0-46a10b561a07",
+            "Priya Raman",
+            "Repetition performance",
+            10,
+            10,
+            0,
+            0,
+            "normal",
+            "unreviewed",
+            "The latest repetition performance measurement is 10 repetitions, which is 0% above this astronaut's own baseline of 10 repetitions. Configured sample threshold: -15%. This is within the configured threshold. Trend across 2 measurement(s): insufficient-data. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-f9f0afaa-5d8f-4202-ae5b-ec49f8256702",
+            "Priya Raman",
+            "Joint range of motion",
+            132,
+            132.74,
+            0.74,
+            0.6,
+            "normal",
+            "unreviewed",
+            "The latest joint range of motion measurement is 132.74 degrees, which is 0.6% above this astronaut's own baseline of 132 degrees. Configured sample threshold: -10%. This is within the configured threshold. Trend across 2 measurement(s): insufficient-data. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-e3b366f9-5b7b-4cae-8e15-f3aebcca2792",
+            "Priya Raman",
+            "Movement velocity",
+            0.84,
+            0.85,
+            0.01,
+            1.2,
+            "normal",
+            "unreviewed",
+            "The latest movement velocity measurement is 0.85 m/s, which is 1.2% above this astronaut's own baseline of 0.84 m/s. Configured sample threshold: -10%. This is within the configured threshold. Trend across 2 measurement(s): insufficient-data. This describes a measurement difference only and does not identify a cause."
+          ],
+          [
+            "INS-bf23e09f-b46b-47cc-bc07-95db813157d1",
+            "Priya Raman",
+            "Force production",
+            124.75,
+            124.81,
+            0.06,
+            0,
+            "normal",
+            "unreviewed",
+            "The latest force production measurement is 124.81 N, which is 0% above this astronaut's own baseline of 124.75 N. Configured sample threshold: -10%. This is within the configured threshold. Trend across 2 measurement(s): insufficient-data. This describes a measurement difference only and does not identify a cause."
+          ]
+        ],
+        "totalRows": 36,
+        "truncated": false
+      }
+    ],
+    "notes": [
+      "Insights are AI-generated (rule-based layer) and are not confirmed medical findings. Each requires review by an authorised specialist.",
+      "Only stored records are included. Demonstration data is labelled \"Simulated demonstration data\" in the data-source summary. This report is a prototype output and is not a clinical document."
+    ],
+    "dataSourceSummary": [
+      {
+        "key": "simulated",
+        "label": "Simulated demonstration data",
+        "count": 1884
+      }
+    ],
+    "recordCount": 1884
+  },
+  {
+    "id": "RPT-a77f2993-57b8-4787-8bef-0fd552164e21",
+    "reportType": "muscle-performance",
+    "title": "Muscle Performance Report",
+    "generatedAt": "2026-11-14T07:29:47.319Z",
+    "generatedBy": "administrator",
+    "filters": {
+      "astronautId": "all",
+      "missionId": "all",
+      "missionPhase": "all",
+      "startDate": null,
+      "endDate": null,
+      "equipment": "all",
+      "category": "all",
+      "metric": "all"
+    },
+    "scope": {
+      "astronaut": "All astronauts (4 in scope)",
+      "mission": "All missions",
+      "missionPhase": "All phases",
+      "period": "All recorded dates",
+      "equipment": "All equipment",
+      "category": "All categories",
+      "metric": "All metrics"
+    },
+    "kpis": [
+      {
+        "label": "Assessments in period",
+        "value": 38
+      },
+      {
+        "label": "Baseline records",
+        "value": 4
+      }
+    ],
+    "sections": [
+      {
+        "title": "Muscle performance summary",
+        "columns": [
+          "Astronaut",
+          "Metric",
+          "Unit",
+          "Baseline (date)",
+          "Latest measurement (date)",
+          "Difference",
+          "% change",
+          "Trend",
+          "Records"
+        ],
+        "rows": [
+          [
+            "Ren Whitfield",
+            "Force production",
+            "N",
+            "115.55 (2026-01-15)",
+            "99.44 (2026-08-03)",
+            -16.11,
+            -13.9,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Movement velocity",
+            "m/s",
+            "0.84 (2026-01-15)",
+            "0.75 (2026-08-03)",
+            -0.09,
+            -10.7,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Joint range of motion",
+            "degrees",
+            "137.78 (2026-01-15)",
+            "128.63 (2026-08-03)",
+            -9.15,
+            -6.6,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-01-15)",
+            "9 (2026-08-03)",
+            -1,
+            -10,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Movement consistency",
+            "%",
+            "90.88 (2026-01-15)",
+            "88.01 (2026-08-03)",
+            -2.87,
+            "n/a (points metric)",
+            "stable",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "78.33 (2026-01-15)",
+            "71.28 (2026-08-03)",
+            -7.05,
+            -9,
+            "falling",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Force production",
+            "N",
+            "127.04 (2026-01-15)",
+            "125.44 (2026-08-03)",
+            -1.6,
+            -1.3,
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Movement velocity",
+            "m/s",
+            "0.88 (2026-01-15)",
+            "0.89 (2026-08-03)",
+            0.01,
+            1.1,
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Joint range of motion",
+            "degrees",
+            "130.01 (2026-01-15)",
+            "130.91 (2026-08-03)",
+            0.9,
+            0.7,
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-01-15)",
+            "10 (2026-08-03)",
+            0,
+            0,
+            "falling",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Movement consistency",
+            "%",
+            "93 (2026-01-15)",
+            "92.85 (2026-08-03)",
+            -0.15,
+            "n/a (points metric)",
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "78.88 (2026-01-15)",
+            "78.88 (2026-08-03)",
+            0,
+            0,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Force production",
+            "N",
+            "118.41 (2026-04-11)",
+            "118.58 (2026-11-18)",
+            0.17,
+            0.1,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Movement velocity",
+            "m/s",
+            "0.87 (2026-04-11)",
+            "0.86 (2026-11-18)",
+            -0.01,
+            -1.1,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Joint range of motion",
+            "degrees",
+            "138.44 (2026-04-11)",
+            "137.93 (2026-11-18)",
+            -0.51,
+            -0.4,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-04-11)",
+            "10 (2026-11-18)",
+            0,
+            0,
+            "falling",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Movement consistency",
+            "%",
+            "90.75 (2026-04-11)",
+            "90.49 (2026-11-18)",
+            -0.26,
+            "n/a (points metric)",
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "82.18 (2026-04-11)",
+            "82.18 (2026-11-18)",
+            0,
+            0,
+            "stable",
+            12
+          ],
+          [
+            "Priya Raman",
+            "Force production",
+            "N",
+            "124.75 (2026-04-11)",
+            "124.81 (2026-05-05)",
+            0.06,
+            0,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Movement velocity",
+            "m/s",
+            "0.84 (2026-04-11)",
+            "0.85 (2026-05-05)",
+            0.01,
+            1.2,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Joint range of motion",
+            "degrees",
+            "132 (2026-04-11)",
+            "132.74 (2026-05-05)",
+            0.74,
+            0.6,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-04-11)",
+            "10 (2026-05-05)",
+            0,
+            0,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Movement consistency",
+            "%",
+            "90.49 (2026-04-11)",
+            "90.25 (2026-05-05)",
+            -0.24,
+            "n/a (points metric)",
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "77.53 (2026-04-11)",
+            "77.53 (2026-05-05)",
+            0,
+            0,
+            "insufficient-data",
+            2
+          ]
+        ],
+        "totalRows": 24,
+        "truncated": false
+      },
+      {
+        "title": "Performance assessment records",
+        "columns": [
+          "Date",
+          "Astronaut",
+          "Phase",
+          "Force production",
+          "Movement velocity",
+          "Joint range of motion",
+          "Repetition performance",
+          "Movement consistency",
+          "Functional assessment score",
+          "Data source"
+        ],
+        "rows": [
+          [
+            "2026-11-18",
+            "Tobias Lindqvist",
+            "postflight",
+            118.58,
+            0.86,
+            137.93,
+            10,
+            90.49,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-11-04",
+            "Tobias Lindqvist",
+            "postflight",
+            117.7,
+            0.87,
+            138.37,
+            10,
+            90.44,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-10-21",
+            "Tobias Lindqvist",
+            "postflight",
+            117.58,
+            0.88,
+            138.16,
+            10,
+            91.04,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-08-28",
+            "Tobias Lindqvist",
+            "in-flight",
+            117.03,
+            0.87,
+            138.1,
+            10,
+            90.56,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-08-15",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.8,
+            0.88,
+            139.44,
+            10,
+            90.78,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-08-03",
+            "Mira Castellan",
+            "postflight",
+            125.44,
+            0.89,
+            130.91,
+            10,
+            92.85,
+            78.88,
+            "simulated"
+          ],
+          [
+            "2026-08-03",
+            "Ren Whitfield",
+            "postflight",
+            99.44,
+            0.75,
+            128.63,
+            9,
+            88.01,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-08-02",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.52,
+            0.88,
+            137.37,
+            10,
+            90.84,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-07-20",
+            "Mira Castellan",
+            "postflight",
+            124.12,
+            0.87,
+            129,
+            10,
+            92.49,
+            77.61,
+            "simulated"
+          ],
+          [
+            "2026-07-20",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.19,
+            0.88,
+            137.22,
+            10,
+            90.97,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-07-20",
+            "Ren Whitfield",
+            "postflight",
+            98,
+            0.75,
+            126.19,
+            8,
+            88.21,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-07-07",
+            "Tobias Lindqvist",
+            "in-flight",
+            119.13,
+            0.87,
+            137.39,
+            10,
+            91.21,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-07-06",
+            "Ren Whitfield",
+            "postflight",
+            98.64,
+            0.74,
+            126.54,
+            9,
+            88.3,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-07-06",
+            "Mira Castellan",
+            "postflight",
+            118.87,
+            0.85,
+            126.69,
+            9,
+            92.17,
+            76.35,
+            "simulated"
+          ],
+          [
+            "2026-06-24",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.63,
+            0.87,
+            137.29,
+            11,
+            90.25,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-06-11",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.24,
+            0.87,
+            137.9,
+            10,
+            91.02,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-05-29",
+            "Mira Castellan",
+            "in-flight",
+            115.46,
+            0.81,
+            125.12,
+            10,
+            91.45,
+            75.09,
+            "simulated"
+          ],
+          [
+            "2026-05-29",
+            "Ren Whitfield",
+            "in-flight",
+            98.88,
+            0.73,
+            128.35,
+            9,
+            87.78,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-05-16",
+            "Mira Castellan",
+            "in-flight",
+            115.89,
+            0.83,
+            124.76,
+            9,
+            91.87,
+            75.09,
+            "simulated"
+          ],
+          [
+            "2026-05-16",
+            "Ren Whitfield",
+            "in-flight",
+            97.68,
+            0.75,
+            127.71,
+            9,
+            87.92,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-05-05",
+            "Priya Raman",
+            "preflight",
+            124.81,
+            0.85,
+            132.74,
+            10,
+            90.25,
+            77.53,
+            "simulated"
+          ],
+          [
+            "2026-05-05",
+            "Tobias Lindqvist",
+            "preflight",
+            117.21,
+            0.87,
+            139.7,
+            10,
+            90.61,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-05-03",
+            "Mira Castellan",
+            "in-flight",
+            118.15,
+            0.83,
+            124.57,
+            10,
+            92.01,
+            75.09,
+            "simulated"
+          ],
+          [
+            "2026-05-03",
+            "Ren Whitfield",
+            "in-flight",
+            96.77,
+            0.73,
+            127.96,
+            8,
+            88.28,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-04-21",
+            "Tobias Lindqvist",
+            "preflight",
+            119.86,
+            0.88,
+            139.32,
+            11,
+            90.69,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-04-21",
+            "Priya Raman",
+            "preflight",
+            125.28,
+            0.84,
+            131.04,
+            10,
+            90.81,
+            77.53,
+            "simulated"
+          ],
+          [
+            "2026-04-20",
+            "Ren Whitfield",
+            "in-flight",
+            101.85,
+            0.77,
+            129.9,
+            8,
+            88.31,
+            72.29,
+            "simulated"
+          ],
+          [
+            "2026-04-20",
+            "Mira Castellan",
+            "in-flight",
+            119.08,
+            0.84,
+            126.13,
+            10,
+            91.95,
+            75.63,
+            "simulated"
+          ],
+          [
+            "2026-04-07",
+            "Ren Whitfield",
+            "in-flight",
+            103.87,
+            0.77,
+            131.93,
+            8,
+            88.9,
+            73.8,
+            "simulated"
+          ],
+          [
+            "2026-04-07",
+            "Mira Castellan",
+            "in-flight",
+            120.02,
+            0.83,
+            125.82,
+            9,
+            91.77,
+            76.44,
+            "simulated"
+          ],
+          [
+            "2026-03-25",
+            "Mira Castellan",
+            "in-flight",
+            122.72,
+            0.86,
+            127.96,
+            10,
+            92.75,
+            77.25,
+            "simulated"
+          ],
+          [
+            "2026-03-25",
+            "Ren Whitfield",
+            "in-flight",
+            108.15,
+            0.79,
+            133.23,
+            9,
+            90.03,
+            75.31,
+            "simulated"
+          ],
+          [
+            "2026-03-12",
+            "Mira Castellan",
+            "in-flight",
+            123.24,
+            0.86,
+            128.05,
+            10,
+            92.48,
+            78.07,
+            "simulated"
+          ],
+          [
+            "2026-03-12",
+            "Ren Whitfield",
+            "in-flight",
+            112.73,
+            0.81,
+            134.83,
+            10,
+            90.43,
+            76.82,
+            "simulated"
+          ],
+          [
+            "2026-02-08",
+            "Mira Castellan",
+            "preflight",
+            127.44,
+            0.88,
+            129.61,
+            10,
+            92.86,
+            78.88,
+            "simulated"
+          ],
+          [
+            "2026-02-08",
+            "Ren Whitfield",
+            "preflight",
+            114.14,
+            0.83,
+            137.67,
+            10,
+            91,
+            78.33,
+            "simulated"
+          ],
+          [
+            "2026-01-25",
+            "Mira Castellan",
+            "preflight",
+            126.51,
+            0.87,
+            129.38,
+            11,
+            93.17,
+            78.88,
+            "simulated"
+          ],
+          [
+            "2026-01-25",
+            "Ren Whitfield",
+            "preflight",
+            114.56,
+            0.85,
+            137.54,
+            9,
+            90.4,
+            78.33,
+            "simulated"
+          ]
+        ],
+        "totalRows": 38,
+        "truncated": false
+      }
+    ],
+    "notes": [
+      "Force, velocity, ROM, repetition and functional metrics are compared as percentages; movement consistency as percentage points. A higher or lower value is not by itself evidence of health or disease.",
+      "Only stored records are included. Demonstration data is labelled \"Simulated demonstration data\" in the data-source summary. This report is a prototype output and is not a clinical document."
+    ],
+    "dataSourceSummary": [
+      {
+        "key": "simulated",
+        "label": "Simulated demonstration data",
+        "count": 1884
+      }
+    ],
+    "recordCount": 1884
+  },
+  {
+    "id": "RPT-78dc6d35-8c75-4fd0-9c45-eb84e01cf72b",
+    "reportType": "muscle-performance",
+    "title": "Muscle Performance Report",
+    "generatedAt": "2026-11-14T08:43:14.508Z",
+    "generatedBy": "medical-specialist",
+    "filters": {
+      "astronautId": "all",
+      "missionId": "all",
+      "missionPhase": "all",
+      "startDate": null,
+      "endDate": null,
+      "equipment": "all",
+      "category": "all",
+      "metric": "all"
+    },
+    "scope": {
+      "astronaut": "All astronauts (4 in scope)",
+      "mission": "All missions",
+      "missionPhase": "All phases",
+      "period": "All recorded dates",
+      "equipment": "All equipment",
+      "category": "All categories",
+      "metric": "All metrics"
+    },
+    "kpis": [
+      {
+        "label": "Assessments in period",
+        "value": 38
+      },
+      {
+        "label": "Baseline records",
+        "value": 4
+      }
+    ],
+    "sections": [
+      {
+        "title": "Muscle performance summary",
+        "columns": [
+          "Astronaut",
+          "Metric",
+          "Unit",
+          "Baseline (date)",
+          "Latest measurement (date)",
+          "Difference",
+          "% change",
+          "Trend",
+          "Records"
+        ],
+        "rows": [
+          [
+            "Ren Whitfield",
+            "Force production",
+            "N",
+            "115.55 (2026-01-15)",
+            "99.44 (2026-08-03)",
+            -16.11,
+            -13.9,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Movement velocity",
+            "m/s",
+            "0.84 (2026-01-15)",
+            "0.75 (2026-08-03)",
+            -0.09,
+            -10.7,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Joint range of motion",
+            "degrees",
+            "137.78 (2026-01-15)",
+            "128.63 (2026-08-03)",
+            -9.15,
+            -6.6,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-01-15)",
+            "9 (2026-08-03)",
+            -1,
+            -10,
+            "falling",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Movement consistency",
+            "%",
+            "90.88 (2026-01-15)",
+            "88.01 (2026-08-03)",
+            -2.87,
+            "n/a (points metric)",
+            "stable",
+            12
+          ],
+          [
+            "Ren Whitfield",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "78.33 (2026-01-15)",
+            "71.28 (2026-08-03)",
+            -7.05,
+            -9,
+            "falling",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Force production",
+            "N",
+            "127.04 (2026-01-15)",
+            "125.44 (2026-08-03)",
+            -1.6,
+            -1.3,
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Movement velocity",
+            "m/s",
+            "0.88 (2026-01-15)",
+            "0.89 (2026-08-03)",
+            0.01,
+            1.1,
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Joint range of motion",
+            "degrees",
+            "130.01 (2026-01-15)",
+            "130.91 (2026-08-03)",
+            0.9,
+            0.7,
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-01-15)",
+            "10 (2026-08-03)",
+            0,
+            0,
+            "falling",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Movement consistency",
+            "%",
+            "93 (2026-01-15)",
+            "92.85 (2026-08-03)",
+            -0.15,
+            "n/a (points metric)",
+            "stable",
+            12
+          ],
+          [
+            "Mira Castellan",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "78.88 (2026-01-15)",
+            "78.88 (2026-08-03)",
+            0,
+            0,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Force production",
+            "N",
+            "118.41 (2026-04-11)",
+            "118.58 (2026-11-18)",
+            0.17,
+            0.1,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Movement velocity",
+            "m/s",
+            "0.87 (2026-04-11)",
+            "0.86 (2026-11-18)",
+            -0.01,
+            -1.1,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Joint range of motion",
+            "degrees",
+            "138.44 (2026-04-11)",
+            "137.93 (2026-11-18)",
+            -0.51,
+            -0.4,
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-04-11)",
+            "10 (2026-11-18)",
+            0,
+            0,
+            "falling",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Movement consistency",
+            "%",
+            "90.75 (2026-04-11)",
+            "90.49 (2026-11-18)",
+            -0.26,
+            "n/a (points metric)",
+            "stable",
+            12
+          ],
+          [
+            "Tobias Lindqvist",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "82.18 (2026-04-11)",
+            "82.18 (2026-11-18)",
+            0,
+            0,
+            "stable",
+            12
+          ],
+          [
+            "Priya Raman",
+            "Force production",
+            "N",
+            "124.75 (2026-04-11)",
+            "124.81 (2026-05-05)",
+            0.06,
+            0,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Movement velocity",
+            "m/s",
+            "0.84 (2026-04-11)",
+            "0.85 (2026-05-05)",
+            0.01,
+            1.2,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Joint range of motion",
+            "degrees",
+            "132 (2026-04-11)",
+            "132.74 (2026-05-05)",
+            0.74,
+            0.6,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Repetition performance",
+            "repetitions",
+            "10 (2026-04-11)",
+            "10 (2026-05-05)",
+            0,
+            0,
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Movement consistency",
+            "%",
+            "90.49 (2026-04-11)",
+            "90.25 (2026-05-05)",
+            -0.24,
+            "n/a (points metric)",
+            "insufficient-data",
+            2
+          ],
+          [
+            "Priya Raman",
+            "Functional assessment score",
+            "points (protocol-defined)",
+            "77.53 (2026-04-11)",
+            "77.53 (2026-05-05)",
+            0,
+            0,
+            "insufficient-data",
+            2
+          ]
+        ],
+        "totalRows": 24,
+        "truncated": false
+      },
+      {
+        "title": "Performance assessment records",
+        "columns": [
+          "Date",
+          "Astronaut",
+          "Phase",
+          "Force production",
+          "Movement velocity",
+          "Joint range of motion",
+          "Repetition performance",
+          "Movement consistency",
+          "Functional assessment score",
+          "Data source"
+        ],
+        "rows": [
+          [
+            "2026-11-18",
+            "Tobias Lindqvist",
+            "postflight",
+            118.58,
+            0.86,
+            137.93,
+            10,
+            90.49,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-11-04",
+            "Tobias Lindqvist",
+            "postflight",
+            117.7,
+            0.87,
+            138.37,
+            10,
+            90.44,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-10-21",
+            "Tobias Lindqvist",
+            "postflight",
+            117.58,
+            0.88,
+            138.16,
+            10,
+            91.04,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-08-28",
+            "Tobias Lindqvist",
+            "in-flight",
+            117.03,
+            0.87,
+            138.1,
+            10,
+            90.56,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-08-15",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.8,
+            0.88,
+            139.44,
+            10,
+            90.78,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-08-03",
+            "Mira Castellan",
+            "postflight",
+            125.44,
+            0.89,
+            130.91,
+            10,
+            92.85,
+            78.88,
+            "simulated"
+          ],
+          [
+            "2026-08-03",
+            "Ren Whitfield",
+            "postflight",
+            99.44,
+            0.75,
+            128.63,
+            9,
+            88.01,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-08-02",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.52,
+            0.88,
+            137.37,
+            10,
+            90.84,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-07-20",
+            "Mira Castellan",
+            "postflight",
+            124.12,
+            0.87,
+            129,
+            10,
+            92.49,
+            77.61,
+            "simulated"
+          ],
+          [
+            "2026-07-20",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.19,
+            0.88,
+            137.22,
+            10,
+            90.97,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-07-20",
+            "Ren Whitfield",
+            "postflight",
+            98,
+            0.75,
+            126.19,
+            8,
+            88.21,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-07-07",
+            "Tobias Lindqvist",
+            "in-flight",
+            119.13,
+            0.87,
+            137.39,
+            10,
+            91.21,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-07-06",
+            "Ren Whitfield",
+            "postflight",
+            98.64,
+            0.74,
+            126.54,
+            9,
+            88.3,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-07-06",
+            "Mira Castellan",
+            "postflight",
+            118.87,
+            0.85,
+            126.69,
+            9,
+            92.17,
+            76.35,
+            "simulated"
+          ],
+          [
+            "2026-06-24",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.63,
+            0.87,
+            137.29,
+            11,
+            90.25,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-06-11",
+            "Tobias Lindqvist",
+            "in-flight",
+            118.24,
+            0.87,
+            137.9,
+            10,
+            91.02,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-05-29",
+            "Mira Castellan",
+            "in-flight",
+            115.46,
+            0.81,
+            125.12,
+            10,
+            91.45,
+            75.09,
+            "simulated"
+          ],
+          [
+            "2026-05-29",
+            "Ren Whitfield",
+            "in-flight",
+            98.88,
+            0.73,
+            128.35,
+            9,
+            87.78,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-05-16",
+            "Mira Castellan",
+            "in-flight",
+            115.89,
+            0.83,
+            124.76,
+            9,
+            91.87,
+            75.09,
+            "simulated"
+          ],
+          [
+            "2026-05-16",
+            "Ren Whitfield",
+            "in-flight",
+            97.68,
+            0.75,
+            127.71,
+            9,
+            87.92,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-05-05",
+            "Priya Raman",
+            "preflight",
+            124.81,
+            0.85,
+            132.74,
+            10,
+            90.25,
+            77.53,
+            "simulated"
+          ],
+          [
+            "2026-05-05",
+            "Tobias Lindqvist",
+            "preflight",
+            117.21,
+            0.87,
+            139.7,
+            10,
+            90.61,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-05-03",
+            "Mira Castellan",
+            "in-flight",
+            118.15,
+            0.83,
+            124.57,
+            10,
+            92.01,
+            75.09,
+            "simulated"
+          ],
+          [
+            "2026-05-03",
+            "Ren Whitfield",
+            "in-flight",
+            96.77,
+            0.73,
+            127.96,
+            8,
+            88.28,
+            71.28,
+            "simulated"
+          ],
+          [
+            "2026-04-21",
+            "Tobias Lindqvist",
+            "preflight",
+            119.86,
+            0.88,
+            139.32,
+            11,
+            90.69,
+            82.18,
+            "simulated"
+          ],
+          [
+            "2026-04-21",
+            "Priya Raman",
+            "preflight",
+            125.28,
+            0.84,
+            131.04,
+            10,
+            90.81,
+            77.53,
+            "simulated"
+          ],
+          [
+            "2026-04-20",
+            "Ren Whitfield",
+            "in-flight",
+            101.85,
+            0.77,
+            129.9,
+            8,
+            88.31,
+            72.29,
+            "simulated"
+          ],
+          [
+            "2026-04-20",
+            "Mira Castellan",
+            "in-flight",
+            119.08,
+            0.84,
+            126.13,
+            10,
+            91.95,
+            75.63,
+            "simulated"
+          ],
+          [
+            "2026-04-07",
+            "Ren Whitfield",
+            "in-flight",
+            103.87,
+            0.77,
+            131.93,
+            8,
+            88.9,
+            73.8,
+            "simulated"
+          ],
+          [
+            "2026-04-07",
+            "Mira Castellan",
+            "in-flight",
+            120.02,
+            0.83,
+            125.82,
+            9,
+            91.77,
+            76.44,
+            "simulated"
+          ],
+          [
+            "2026-03-25",
+            "Mira Castellan",
+            "in-flight",
+            122.72,
+            0.86,
+            127.96,
+            10,
+            92.75,
+            77.25,
+            "simulated"
+          ],
+          [
+            "2026-03-25",
+            "Ren Whitfield",
+            "in-flight",
+            108.15,
+            0.79,
+            133.23,
+            9,
+            90.03,
+            75.31,
+            "simulated"
+          ],
+          [
+            "2026-03-12",
+            "Mira Castellan",
+            "in-flight",
+            123.24,
+            0.86,
+            128.05,
+            10,
+            92.48,
+            78.07,
+            "simulated"
+          ],
+          [
+            "2026-03-12",
+            "Ren Whitfield",
+            "in-flight",
+            112.73,
+            0.81,
+            134.83,
+            10,
+            90.43,
+            76.82,
+            "simulated"
+          ],
+          [
+            "2026-02-08",
+            "Mira Castellan",
+            "preflight",
+            127.44,
+            0.88,
+            129.61,
+            10,
+            92.86,
+            78.88,
+            "simulated"
+          ],
+          [
+            "2026-02-08",
+            "Ren Whitfield",
+            "preflight",
+            114.14,
+            0.83,
+            137.67,
+            10,
+            91,
+            78.33,
+            "simulated"
+          ],
+          [
+            "2026-01-25",
+            "Mira Castellan",
+            "preflight",
+            126.51,
+            0.87,
+            129.38,
+            11,
+            93.17,
+            78.88,
+            "simulated"
+          ],
+          [
+            "2026-01-25",
+            "Ren Whitfield",
+            "preflight",
+            114.56,
+            0.85,
+            137.54,
+            9,
+            90.4,
+            78.33,
+            "simulated"
+          ]
+        ],
+        "totalRows": 38,
+        "truncated": false
+      }
+    ],
+    "notes": [
+      "Force, velocity, ROM, repetition and functional metrics are compared as percentages; movement consistency as percentage points. A higher or lower value is not by itself evidence of health or disease.",
+      "Only stored records are included. Demonstration data is labelled \"Simulated demonstration data\" in the data-source summary. This report is a prototype output and is not a clinical document."
+    ],
+    "dataSourceSummary": [
+      {
+        "key": "simulated",
+        "label": "Simulated demonstration data",
+        "count": 1884
+      }
+    ],
+    "recordCount": 1884
+  }
+]
