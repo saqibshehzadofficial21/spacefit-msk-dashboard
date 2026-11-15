@@ -27,7 +27,7 @@ export default function ExerciseCountermeasures() {
       <div role="tablist" aria-label="Exercise categories" className="mb-6 flex gap-1 overflow-x-auto rounded-xl border border-slate-700/50 bg-space-850/60 p-1 scrollbar-thin">
         {tabs.map((t) => (
           <button key={t.value} role="tab" aria-selected={category === t.value} onClick={() => setCategory(t.value)}
-            className={`whitespace-nowrap rounded-lg px-3.5 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${category === t.value ? 'bg-gradient-to-r from-accent to-cyan-400 text-white shadow-glow' : 'text-slate-300 hover:bg-space-700/70 hover:text-white'}`}>
+            className={`whitespace-nowrap rounded-lg px-3.5 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${category === t.value ? 'bg-[var(--accent-fill)] text-on-accent' : 'text-secondary hover:bg-surface-raised hover:text-primary'}`}>
             {t.label}
           </button>
         ))}

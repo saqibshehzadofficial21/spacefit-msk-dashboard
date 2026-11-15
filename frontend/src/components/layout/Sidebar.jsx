@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, Dumbbell, Activity, Radio, Sparkles, BellRing, FileBarChart, Settings, PanelLeftClose, PanelLeftOpen, Orbit, X } from 'lucide-react';
+import { LayoutDashboard, Users, Dumbbell, Activity, Radio, Sparkles, BellRing, FileBarChart, Settings, PanelLeftClose, PanelLeftOpen, X } from 'lucide-react';
 
 export const NAV_ITEMS = [
   { to: '/overview', label: 'Overview', icon: LayoutDashboard },
@@ -24,7 +24,7 @@ function NavItems({ collapsed, onNavigate }) {
             aria-label={label}
             className={({ isActive }) =>
               `flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition duration-200 ${
-                isActive ? 'bg-gradient-to-r from-accent to-cyan-500 text-white shadow-glow' : 'text-slate-400 hover:bg-space-700/70 hover:text-slate-100'
+                isActive ? 'bg-[var(--accent-fill)] text-on-accent' : 'text-secondary hover:bg-surface-raised hover:text-primary'
               } ${collapsed ? 'justify-center px-0' : ''}`
             }
           >
@@ -32,7 +32,7 @@ function NavItems({ collapsed, onNavigate }) {
             {!collapsed && <span className="truncate">{short ?? label}</span>}
           </NavLink>
           {collapsed && (
-            <span role="tooltip" className="pointer-events-none absolute left-full top-1/2 z-50 ml-3 -translate-y-1/2 whitespace-nowrap rounded-lg border border-cyan-400/20 bg-space-700 px-2.5 py-1.5 text-xs font-medium text-slate-100 opacity-0 shadow-panel transition group-hover:opacity-100 group-focus-within:opacity-100">
+            <span role="tooltip" className="invisible pointer-events-none absolute left-full top-1/2 z-50 ml-3 -translate-y-1/2 whitespace-nowrap rounded-lg border border-subtle bg-surface-raised px-2.5 py-1.5 text-xs font-medium text-primary shadow-panel group-hover:visible group-focus-within:visible">
               {label}
             </span>
           )}
@@ -48,8 +48,8 @@ function Brand({ collapsed }) {
       <img src="/logo/msk-logo.svg" alt="" className="h-9 w-9 shrink-0 rounded-xl" />
       {!collapsed && (
         <div className="min-w-0">
-          <p className="truncate text-sm font-bold tracking-wide text-white">MSK Performance</p>
-          <p className="truncate text-[11px] uppercase tracking-[0.18em] text-cyan-300/80">Monitoring prototype</p>
+          <p className="truncate text-sm font-bold tracking-wide text-primary">MSK Performance</p>
+          <p className="truncate text-xs uppercase tracking-[0.18em] text-muted">Monitoring prototype</p>
         </div>
       )}
     </div>
@@ -60,26 +60,23 @@ export default function Sidebar({ collapsed, onToggle, mobileOpen, onCloseMobile
   return (
     <>
       {/* Desktop and laptop */}
-      <aside className={`no-print sticky top-0 hidden h-screen shrink-0 flex-col border-r border-slate-700/40 bg-space-900/90 backdrop-blur-xl transition-[width] duration-300 md:flex ${collapsed ? 'w-[76px]' : 'w-64'}`} aria-label="Primary navigation">
+      <aside className={`no-print sticky top-0 hidden h-screen shrink-0 flex-col border-r border-[var(--border)] bg-[var(--sidebar-bg)] transition-[width] duration-300 md:flex ${collapsed ? 'w-[76px]' : 'w-64'}`} aria-label="Primary navigation">
         <div className="flex items-center justify-between gap-2 px-4 py-5">
           <Brand collapsed={collapsed} />
         </div>
         <nav className="flex-1 overflow-y-auto px-3 scrollbar-thin"><NavItems collapsed={collapsed} /></nav>
-        <div className="border-t border-slate-700/40 p-3">
+        <div className="border-t border-[var(--border)] p-3">
           <button type="button" onClick={onToggle} className={`btn-ghost w-full ${collapsed ? 'px-0' : ''}`} aria-label={collapsed ? 'Expand sidebar' : 'Collapse sidebar'} aria-expanded={!collapsed}>
             {collapsed ? <PanelLeftOpen className="h-4 w-4" /> : <><PanelLeftClose className="h-4 w-4" /><span className="text-xs">Collapse</span></>}
           </button>
-          {!collapsed && (
-            <p className="mt-3 flex items-center gap-2 px-1 text-[11px] text-slate-500"><Orbit className="h-3.5 w-3.5" aria-hidden="true" />Fictional demonstration data</p>
-          )}
         </div>
       </aside>
 
       {/* Tablet and phones: drawer */}
       {mobileOpen && (
         <div className="no-print fixed inset-0 z-40 md:hidden" role="dialog" aria-modal="true" aria-label="Navigation">
-          <div className="absolute inset-0 bg-[#030611]/80" onClick={onCloseMobile} aria-hidden="true" />
-          <aside className="absolute left-0 top-0 flex h-full w-72 flex-col border-r border-slate-700/40 bg-space-900 p-4 shadow-panel">
+          <div className="absolute inset-0 bg-[rgba(15,23,42,0.65)]" onClick={onCloseMobile} aria-hidden="true" />
+          <aside className="absolute left-0 top-0 flex h-full w-72 flex-col border-r border-[var(--border)] bg-[var(--sidebar-bg)] p-4 shadow-[var(--shadow-panel)]">
             <div className="mb-4 flex items-center justify-between">
               <Brand collapsed={false} />
               <button type="button" onClick={onCloseMobile} className="btn-ghost p-1.5" aria-label="Close navigation"><X className="h-5 w-5" /></button>

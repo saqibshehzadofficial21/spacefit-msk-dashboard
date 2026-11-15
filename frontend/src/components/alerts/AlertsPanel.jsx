@@ -86,7 +86,7 @@ export default function AlertsPanel({ astronautId = 'all' }) {
           >
             <span>
               <span className="block text-xs font-semibold uppercase tracking-wider text-slate-400">{s.label}</span>
-              <span className="mt-1 block text-2xl font-bold tabular-nums text-white">{countBySeverity[s.value] ?? 0}</span>
+              <span className="mt-1 block text-2xl font-bold tabular-nums text-primary">{countBySeverity[s.value] ?? 0}</span>
             </span>
             <StatusBadge tone={SEVERITY_TONE[s.value]} dot>{s.label}</StatusBadge>
           </button>

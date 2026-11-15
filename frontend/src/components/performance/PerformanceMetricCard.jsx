@@ -20,7 +20,7 @@ export default function PerformanceMetricCard({ def, info, onViewHistory }) {
       </div>
 
       <div>
-        <p className="text-3xl font-bold tabular-nums tracking-tight text-white">
+        <p className="text-3xl font-bold tabular-nums tracking-tight text-primary">
           {noData ? '—' : formatNumber(info.latest, def.decimals)}
           <span className="ml-1.5 text-sm font-medium text-slate-400">{def.unit}</span>
         </p>

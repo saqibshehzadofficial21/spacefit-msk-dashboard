@@ -8,7 +8,7 @@ export default function ReportPreview({ report }) {
     <article className="panel print-area p-6 sm:p-8" aria-label={`Report preview: ${report.title}`}>
       <header className="flex flex-col gap-2 border-b border-slate-700/40 pb-5">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">Astronaut MSK monitoring prototype</p>
-        <h2 className="text-2xl font-bold text-white">{report.title}</h2>
+        <h2 className="text-2xl font-bold text-primary">{report.title}</h2>
         <p className="text-xs text-slate-400">Generated {formatDateTime(report.generatedAt)} · {report.recordCount} stored record(s) in scope · ID {report.id}</p>
       </header>
 
@@ -21,12 +21,12 @@ export default function ReportPreview({ report }) {
 
       {report.kpis?.length > 0 && (
         <section className="mt-6" aria-labelledby="kpi-sum">
-          <h3 id="kpi-sum" className="mb-3 text-sm font-semibold text-white">KPI summary</h3>
+          <h3 id="kpi-sum" className="mb-3 text-sm font-semibold text-primary">KPI summary</h3>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {report.kpis.map((k) => (
               <div key={k.label} className="rounded-xl border border-slate-700/50 bg-space-900/50 p-3">
                 <p className="text-xs text-slate-400">{k.label}</p>
-                <p className="mt-1 text-xl font-bold tabular-nums text-white">{k.value ?? '—'}</p>
+                <p className="mt-1 text-xl font-bold tabular-nums text-primary">{k.value ?? '—'}</p>
               </div>
             ))}
           </div>
@@ -35,7 +35,7 @@ export default function ReportPreview({ report }) {
 
       {report.sections.map((section) => (
         <section key={section.title} className="mt-8" aria-label={section.title}>
-          <h3 className="mb-3 text-sm font-semibold text-white">{section.title}</h3>
+          <h3 className="mb-3 text-sm font-semibold text-primary">{section.title}</h3>
           {section.rows.length === 0 ? (
             <p className="rounded-lg border border-dashed border-slate-700 p-4 text-sm text-slate-400">No records in this section for the selected filters.</p>
           ) : (
@@ -60,7 +60,7 @@ export default function ReportPreview({ report }) {
 
       <section className="mt-8 grid gap-6 md:grid-cols-2" aria-labelledby="src-heading">
         <div>
-          <h3 id="src-heading" className="mb-2 text-sm font-semibold text-white">Data source information</h3>
+          <h3 id="src-heading" className="mb-2 text-sm font-semibold text-primary">Data source information</h3>
           {report.dataSourceSummary.length === 0 ? <p className="text-sm text-slate-400">No records in scope.</p> : (
             <ul className="flex flex-col gap-2">
               {report.dataSourceSummary.map((d) => (
@@ -73,7 +73,7 @@ export default function ReportPreview({ report }) {
           )}
         </div>
         <div>
-          <h3 className="mb-2 text-sm font-semibold text-white">Notes and limitations</h3>
+          <h3 className="mb-2 text-sm font-semibold text-primary">Notes and limitations</h3>
           <ul className="list-disc space-y-1.5 pl-5 text-xs leading-relaxed text-slate-400">
             {report.notes.map((n) => <li key={n}>{n}</li>)}
           </ul>

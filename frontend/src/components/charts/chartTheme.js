@@ -1,23 +1,23 @@
-/** Shared chart colours and tooltip styling. Gradients are used for accents only. */
+/** Shared chart colours and tooltip styling. */
 export const COLORS = {
-  grid: 'rgba(148,163,184,0.12)',
-  axis: '#64748B',
-  text: '#94A3B8',
-  blue: '#3B82F6',
-  cyan: '#38BDF8',
-  violet: '#8B5CF6',
-  ok: '#22C55E',
-  warn: '#F59E0B',
-  crit: '#EF4444',
-  series: ['#38BDF8', '#3B82F6', '#A78BFA', '#22D3EE', '#818CF8', '#34D399', '#F472B6', '#FBBF24'],
+  grid: 'var(--chart-grid)',
+  axis: 'var(--chart-axis)',
+  text: 'var(--chart-axis)',
+  blue: 'var(--chart-blue)',
+  cyan: 'var(--chart-cyan)',
+  violet: 'var(--chart-violet)',
+  ok: 'var(--chart-green)',
+  warn: 'var(--chart-amber)',
+  crit: 'var(--chart-red)',
+  series: ['var(--chart-blue)', 'var(--chart-cyan)', 'var(--chart-violet)', 'var(--chart-green)', 'var(--chart-amber)', 'var(--chart-red)'],
 };
 
 export const tooltipStyle = {
-  contentStyle: { background: '#101A2E', border: '1px solid rgba(56,189,248,0.25)', borderRadius: 12, color: '#E2E8F0', fontSize: 12 },
-  labelStyle: { color: '#94A3B8', marginBottom: 4 },
-  cursor: { stroke: 'rgba(56,189,248,0.35)', fill: 'rgba(56,189,248,0.06)' },
+  contentStyle: { background: 'var(--surface-raised)', border: '1px solid var(--border)', borderRadius: 12, color: 'var(--text-primary)', fontSize: 12 },
+  labelStyle: { color: 'var(--text-muted)', marginBottom: 4 },
+  cursor: { stroke: 'rgba(59,130,246,0.35)', fill: 'rgba(59,130,246,0.08)' },
 };
 
-export const axisProps = { stroke: COLORS.axis, tick: { fill: COLORS.text, fontSize: 11 }, tickLine: false, axisLine: { stroke: COLORS.grid } };
+export const axisProps = { stroke: COLORS.axis, tick: { fill: COLORS.text, fontSize: 12 }, tickLine: false, axisLine: { stroke: COLORS.grid } };
 
 export const shortDate = (iso) => (iso ? new Date(iso).toISOString().slice(0, 10) : '');

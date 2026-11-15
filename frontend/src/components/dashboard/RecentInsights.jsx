@@ -1,25 +1,29 @@
 import { Link } from 'react-router-dom';
 import StatusBadge from '../common/StatusBadge.jsx';
-import { formatDate, formatPercent, formatNumber, SEVERITY_TEXT, SEVERITY_TONE, truncate } from '../../utils/formatters.js';
+import { formatDate, SEVERITY_TEXT, SEVERITY_TONE, truncate } from '../../utils/formatters.js';
 
-export default function RecentInsights({ insights }) {
-  if (!insights.length) return <p className="text-sm text-slate-400">No insights yet. Run the analysis from Adaptive Insights.</p>;
+export default function RecentInsights({ insights, astronauts = [], simulated = false }) {
+  if (!insights.length) return <p className="text-sm text-muted">Nothing new to review.</p>;
   return (
-    <ul className="flex flex-col gap-3">
-      {insights.map((i) => (
-        <li key={i.id} className="rounded-xl border border-slate-700/50 bg-space-900/50 p-3.5">
+    <>
+      <ul className="flex flex-col gap-3">
+      {[...insights].sort((a, b) => new Date(b.generatedAt) - new Date(a.generatedAt)).slice(0, 5).map((i) => (
+        <li key={i.id} className="rounded-xl border border-border-subtle bg-surface-sunken p-3.5">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <p className="text-sm font-semibold text-slate-100">{i.metricName}</p>
-            <StatusBadge tone={SEVERITY_TONE[i.severity]} dot>{SEVERITY_TEXT[i.severity]}</StatusBadge>
+            <p className="text-sm font-semibold text-primary">{i.metricName}</p>
+            <div className="flex flex-wrap gap-1">
+              <StatusBadge tone={SEVERITY_TONE[i.severity]} dot>{SEVERITY_TEXT[i.severity]}</StatusBadge>
+              {simulated && <StatusBadge tone="violet">Simulated</StatusBadge>}
+            </div>
           </div>
-          <p className="mt-1 text-xs text-slate-400">
-            <span className="font-mono text-slate-500">{i.astronautId}</span> · {formatDate(i.measurementDate)} · baseline {formatNumber(i.baselineValue, 2)} → current {formatNumber(i.currentValue, 2)} {i.unit}
-            {i.percentChange !== null && i.percentChange !== undefined && <span className="ml-1 font-semibold text-cyan-200">({formatPercent(i.percentChange)})</span>}
-          </p>
-          <p className="mt-2 text-xs leading-relaxed text-slate-300">{truncate(i.explanation, 170)}</p>
-          <Link to="/adaptive-insights" className="mt-2 inline-block text-xs font-medium text-cyan-300 hover:underline">Review details →</Link>
+          <p className="mt-2 text-sm leading-relaxed text-secondary">{truncate(i.explanation, 170)}</p>
+          <p className="mt-2 text-xs text-muted">{astronauts.find((person) => person.id === i.astronautId)?.name ?? i.astronautId} · {formatDate(i.measurementDate)}</p>
+          <Link to="/adaptive-insights" className="mt-2 inline-block text-sm font-medium text-accent-link hover:underline">View details</Link>
         </li>
       ))}
-    </ul>
+      </ul>
+      <p className="mt-3 text-xs text-muted">Rule-based. Describes a measurement difference only.</p>
+      {insights.length > 5 && <Link to="/adaptive-insights" className="mt-2 inline-block text-sm font-medium text-accent-link hover:underline">View all insights</Link>}
+    </>
   );
 }

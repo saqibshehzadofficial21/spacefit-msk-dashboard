@@ -1,4 +1,5 @@
 import { Activity, BellRing, Dumbbell, Gauge, RefreshCw, Rocket, Users } from 'lucide-react';
+import { useState } from 'react';
 import PageHeader from '../components/layout/PageHeader.jsx';
 import Button from '../components/common/Button.jsx';
 import Card from '../components/common/Card.jsx';
@@ -14,73 +15,166 @@ import { Skeleton } from '../components/common/LoadingSpinner.jsx';
 import { dashboardService } from '../services/dashboardService.js';
 import { useFetch } from '../hooks/useFetch.js';
 import { useAppContext } from '../context/AppContext.jsx';
+import { METRIC_KEYS, PHASES } from '../utils/constants.js';
+import { formatDate } from '../utils/formatters.js';
+import StatusBadge from '../components/common/StatusBadge.jsx';
 
 export default function Dashboard() {
-  const { filterParams, notifyDataChanged } = useAppContext();
+  const { filterParams, filters, missions, astronauts, notifyDataChanged } = useAppContext();
   const paramsKey = JSON.stringify(filterParams);
-  const summary = useFetch(() => dashboardService.summary(filterParams), [paramsKey]);
-  const s = summary.data;
+  const summary = useFetch(async () => {
+    const response = await dashboardService.summary(filterParams);
+    return { key: paramsKey, value: response.data };
+  }, [paramsKey]);
+  const [granularity, setGranularity] = useState('weekly');
+  const exercise = useFetch(async () => {
+    const response = await dashboardService.exerciseTrends({ ...filterParams, granularity });
+    return { key: paramsKey, granularity, value: response.data };
+  }, [paramsKey, granularity]);
+  const s = summary.data?.key === paramsKey ? summary.data.value : null;
+  const exerciseData = exercise.data?.key === paramsKey && exercise.data.granularity === granularity ? exercise.data.value : null;
   const k = s?.kpis;
+  const prescribed = exerciseData?.rows.reduce((sum, row) => sum + row.prescribed, 0) ?? 0;
+  const completed = exerciseData?.rows.reduce((sum, row) => sum + row.completed, 0) ?? 0;
+  const adherence = prescribed ? (completed / prescribed) * 100 : null;
+  const scope = getScopeLabel(filterParams, filters, missions, astronauts);
+  const allDateScope = getScopeLabel(
+    { ...filterParams, startDate: '', endDate: '' },
+    { ...filters, missionPhase: 'all' },
+    missions,
+    astronauts,
+  );
+  const missionScope = getMissionScope(missions, filters);
+  const simulatedMeasurements = Boolean(s?.dataSourceCounts?.simulated);
+
+  const metricCounts = useFetch(async () => {
+    const results = await Promise.all(METRIC_KEYS.map(async (key) => ({
+      key,
+      result: await dashboardService.performanceTrends({ ...filterParams, metric: key }),
+    })));
+    return { key: paramsKey, results };
+  }, [paramsKey]);
+  const metricCountResults = metricCounts.data?.key === paramsKey ? metricCounts.data.results : null;
+  const metric = metricCountResults?.reduce((best, current) => {
+    const records = current.result.data.series.reduce((sum, series) => sum + series.points.length, 0);
+    const bestRecords = best.result.data.series.reduce((sum, series) => sum + series.points.length, 0);
+    return records > bestRecords ? current : best;
+  }, metricCountResults[0])?.key ?? 'forceProduction';
 
   return (
     <>
       <PageHeader
-        title="Astronaut Health & Performance Overview"
-        subtitle="Monitor exercise countermeasures, physical performance, mission activity, and individual baseline changes."
+        title="Astronaut health and performance"
+        subtitle="Exercise, performance, mission activity, and changes from each person's baseline."
         breadcrumbs={[{ label: 'Command centre' }]}
-        actions={<Button variant="secondary" icon={RefreshCw} loading={summary.loading && !!s} onClick={() => { summary.reload(); notifyDataChanged(); }}>Refresh data</Button>}
+        actions={<Button variant="secondary" icon={RefreshCw} loading={(summary.loading || exercise.loading) && !!s} onClick={() => { summary.reload(); exercise.reload(); notifyDataChanged(); }}>Refresh data</Button>}
       />
-
-      {summary.error && <div className="mb-6"><ErrorState message={summary.error} onRetry={summary.reload} /></div>}
 
       <section aria-labelledby="kpi-heading" className="mb-6">
         <h2 id="kpi-heading" className="sr-only">Key performance indicators</h2>
-        {!s ? (
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-6">{Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} className="h-36" />)}</div>
+        {summary.error ? <ErrorState message={summary.error} onRetry={summary.reload} /> : !s ? (
+          summary.error ? <ErrorState message={summary.error} onRetry={summary.reload} /> :
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">{Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} className="h-36" />)}</div>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-6">
-            <KPICard title="Total astronauts" value={k.totalAstronauts.value} icon={Users} tone="cyan" description={k.totalAstronauts.description} />
-            <KPICard title="Active missions" value={k.activeMissions.value} icon={Rocket} tone="violet" description={k.activeMissions.description} />
-            <KPICard title="Exercise sessions completed" value={k.exerciseSessionsCompleted.value} icon={Dumbbell} tone="ok" description={k.exerciseSessionsCompleted.description} />
-            <KPICard title="Average exercise adherence" value={k.averageAdherence.value} unit="%" icon={Gauge} tone={k.averageAdherence.value !== null && k.averageAdherence.value < 80 ? 'attention' : 'ok'} description={k.averageAdherence.description} />
-            <KPICard title="Performance changes detected" value={k.performanceChangesDetected.value} icon={Activity} tone={k.performanceChangesDetected.value ? 'attention' : 'cyan'} description={k.performanceChangesDetected.description} />
-            <KPICard title="Alerts requiring review" value={k.alertsRequiringReview.value} icon={BellRing} tone={k.alertsRequiringReview.value ? 'critical' : 'cyan'} description={k.alertsRequiringReview.description} />
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-6">
+            <KPICard title="Astronauts in view" value={k.totalAstronauts.value} icon={Users} tone="info" description="Astronaut records in the current filter" scope={allDateScope} simulated={simulatedMeasurements} />
+            <KPICard title="Missions in progress" value={k.activeMissions.value} icon={Rocket} tone="violet" description="Missions with active status" scope={missionScope} simulated={simulatedMeasurements} />
+            <KPICard
+              title="Sessions completed"
+              value={exercise.error ? undefined : prescribed ? `${completed} of ${prescribed} completed` : undefined}
+              icon={Dumbbell} tone="ok"
+              state={exercise.error ? 'error' : exercise.loading && !exerciseData ? 'loading' : prescribed ? 'value' : 'empty'}
+              hint={exercise.error ? exercise.error : 'No sessions prescribed in this period.'}
+              onRetry={exercise.reload}
+              description={exercise.loading && !exerciseData ? 'Loading prescribed session totals.' : prescribed ? `${completed} of ${prescribed} prescribed this period` : 'No prescribed sessions this period.'}
+              scope={scope}
+              simulated={simulatedMeasurements}
+              message="No sessions prescribed in this period."
+            />
+            <KPICard
+              title="Adherence" value={adherence} unit="%"
+              icon={Gauge} tone={adherence !== null && adherence < 80 ? 'attention' : 'ok'}
+              state={exercise.error ? 'error' : exercise.loading && !exerciseData ? 'loading' : prescribed ? 'value' : 'empty'}
+              hint={exercise.error ? exercise.error : 'No sessions prescribed in this period.'}
+              onRetry={exercise.reload}
+              description="Completed ÷ prescribed sessions"
+              scope={scope}
+              simulated={simulatedMeasurements}
+              message="No sessions prescribed in this period."
+            />
+            <KPICard title="Changes past threshold" value={k.performanceChangesDetected.value} icon={Activity} tone={k.performanceChangesDetected.value ? 'attention' : 'info'} description="Compared with each person's own baseline" scope={allDateScope} simulated={simulatedMeasurements} />
+            <KPICard title="Alerts to review" value={k.alertsRequiringReview.value === 0 ? 'All alerts reviewed' : k.alertsRequiringReview.value} icon={BellRing} tone={k.alertsRequiringReview.value ? 'critical' : 'ok'} valueTone={k.alertsRequiringReview.value ? undefined : 'ok'} description="New alerts waiting for a specialist" scope={allDateScope} />
           </div>
         )}
       </section>
 
-      <div className="grid gap-6 xl:grid-cols-3">
-        <Card className="xl:col-span-2" title="A. Astronaut mission overview" subtitle="Click a row to open the astronaut profile.">
-          {!s ? <Skeleton className="h-48" /> : <MissionOverview rows={s.overview} loading={summary.loading} />}
+      <div className="grid min-w-0 gap-6 xl:grid-cols-3">
+        <Card className="min-w-0 xl:col-span-2" title="Crew overview" subtitle="Select a row to open the astronaut profile." scope={allDateScope} bodyClass="dashboard-card">
+          {summary.error ? <ErrorState message={summary.error} onRetry={summary.reload} /> : !s ? <Skeleton className="h-48" /> : <MissionOverview rows={s.overview} loading={summary.loading} />}
         </Card>
-        <Card title="E. Recent alerts" subtitle="Newest first. Open an alert to review it.">
-          {!s ? <Skeleton className="h-48" /> : <RecentAlerts alerts={s.recentAlerts} />}
-        </Card>
-      </div>
-
-      <div className="mt-6 grid gap-6 xl:grid-cols-2">
-        <Card title="B. Exercise adherence" subtitle="Prescribed, completed and missed sessions. Daily, weekly or monthly grouping; the top-bar date range applies.">
-          <ExerciseAdherenceChart params={filterParams} paramsKey={paramsKey} />
-        </Card>
-        <Card title="C. Muscle performance trends" subtitle="Change from each astronaut's own baseline. Lines are never combined across baselines.">
-          <PerformanceTrendChart params={filterParams} paramsKey={paramsKey} />
+        <Card title="Recent alerts" subtitle="Newest alerts first." scope={allDateScope} bodyClass="dashboard-card">
+          {summary.error ? <ErrorState message={summary.error} onRetry={summary.reload} /> : !s ? <Skeleton className="h-48" /> : <RecentAlerts alerts={s.recentAlerts} astronauts={astronauts} />}
         </Card>
       </div>
 
-      <div className="mt-6 grid gap-6 xl:grid-cols-3">
-        <Card className="xl:col-span-2" title="F. Mission activity timeline" subtitle="Records by phase: preflight, in-flight and postflight.">
-          {!s ? <Skeleton className="h-40" /> : <MissionTimeline timeline={s.missionTimeline} />}
+      <div className="mt-6 grid min-w-0 gap-6 lg:grid-cols-2">
+        <Card title="Exercise adherence" subtitle="Prescribed, completed, and missed sessions." scope={scope} bodyClass="dashboard-card">
+          <ExerciseAdherenceChart
+            data={exerciseData}
+            loading={exercise.loading || !exerciseData}
+            error={exercise.error}
+            reload={exercise.reload}
+            granularity={granularity}
+            onGranularityChange={setGranularity}
+            simulated={simulatedMeasurements}
+          />
         </Card>
-        <Card title="D. Latest insights" subtitle="Rule-based, compared with each astronaut's baseline.">
-          {!s ? <Skeleton className="h-48" /> : <RecentInsights insights={s.latestInsights} />}
+        <Card title="Muscle performance trends" subtitle="Each astronaut is compared with their own baseline." scope={scope} bodyClass="dashboard-card">
+          <PerformanceTrendChart
+            params={filterParams}
+            paramsKey={paramsKey}
+            defaultMetric={metric}
+            simulated={simulatedMeasurements}
+            defaultMetricError={metricCounts.error}
+            onRetryDefaultMetric={metricCounts.reload}
+          />
+        </Card>
+      </div>
+
+      <div className="mt-6 grid min-w-0 gap-6 xl:grid-cols-3">
+        <Card className="min-w-0 xl:col-span-2" title="Mission activity timeline" subtitle="Exercise, assessment, and sensor records by phase." scope={scope} bodyClass="dashboard-card">
+          {summary.error ? <ErrorState message={summary.error} onRetry={summary.reload} /> : !s ? <Skeleton className="h-40" /> : (
+            <>
+              {simulatedMeasurements && <StatusBadge tone="violet" className="mb-3">Simulated</StatusBadge>}
+              <MissionTimeline timeline={s.missionTimeline} />
+            </>
+          )}
+        </Card>
+        <Card title="Latest insights" subtitle="Measurement differences from each astronaut's baseline." scope={allDateScope} bodyClass="dashboard-card">
+          {summary.error ? <ErrorState message={summary.error} onRetry={summary.reload} /> : !s ? <Skeleton className="h-48" /> : <RecentInsights insights={s.latestInsights} astronauts={astronauts} simulated={simulatedMeasurements} />}
         </Card>
       </div>
 
       {s && (
-        <p className="mt-6 text-center text-xs text-slate-500">
-          Data sources in this view: {Object.entries(s.dataSourceCounts).map(([k2, v]) => `${k2} ${v}`).join(' · ') || 'none'}. Simulated values are labelled and are not hardware measurements.
+        <p className="mt-6 text-center text-xs text-muted">
+          Data sources in this view: {Object.entries(s.dataSourceCounts).map(([source, count]) => `${source === 'ai-generated' ? 'rule-based' : source} ${count}`).join(' · ') || 'none'}. Simulated demonstration values are not hardware measurements.
         </p>
       )}
     </>
   );
+}
+
+function getScopeLabel(params, filters, missions, astronauts) {
+  const start = params.startDate ? formatDate(params.startDate) : null;
+  const end = params.endDate ? formatDate(params.endDate) : null;
+  const dateScope = start && end ? `${start} to ${end}` : start ? `From ${start}` : end ? `Through ${end}` : 'All recorded dates';
+  const mission = missions.find((item) => item.id === filters.missionId)?.name ?? (filters.missionId === 'all' ? 'All missions' : 'Selected mission');
+  const astronaut = astronauts.find((item) => item.id === filters.astronautId)?.name ?? (filters.astronautId === 'all' ? null : 'Selected astronaut');
+  const phase = filters.missionPhase === 'all' ? null : PHASES.find((item) => item.value === filters.missionPhase)?.label ?? filters.missionPhase;
+  return [dateScope, mission, phase, astronaut].filter(Boolean).join(' · ');
+}
+
+function getMissionScope(missions, filters) {
+  const mission = missions.find((item) => item.id === filters.missionId)?.name ?? (filters.missionId === 'all' ? 'All missions' : 'Selected mission');
+  return `All recorded dates · ${mission}`;
 }

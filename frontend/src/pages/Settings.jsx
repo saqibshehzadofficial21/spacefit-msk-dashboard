@@ -61,9 +61,9 @@ export default function Settings() {
                 {Object.entries(ROLE_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
               </Select>
             </Field>
-            <p className="text-slate-300">Current role: <strong className="text-white">{roleLabel}</strong>. {ROLE_DESCRIPTIONS[role]}</p>
+            <p className="text-secondary">Current role: <strong className="text-primary">{roleLabel}</strong>. {ROLE_DESCRIPTIONS[role]}</p>
             <div>
-              <h3 className="mb-2 text-sm font-semibold text-white">Demo users (fictional)</h3>
+              <h3 className="mb-2 text-sm font-semibold text-primary">Demo users (fictional)</h3>
               <ul className="flex flex-col gap-2">
                 {(users.data ?? []).map((u) => (
                   <li key={u.id} className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-space-900/40 px-3 py-2">
@@ -90,7 +90,7 @@ export default function Settings() {
             <Info k="Analysis layer 2" v={s.system.analysis?.layer2} />
             <Info k="Server time" v={formatDateTime(s.system.serverTime)} />
           </dl>
-          <h3 className="mb-2 mt-5 text-sm font-semibold text-white">Sensor adapters</h3>
+          <h3 className="mb-2 mt-5 text-sm font-semibold text-primary">Sensor adapters</h3>
           <ul className="flex flex-col gap-2 text-sm">
             {s.system.sensorAdapters.map((a) => (
               <li key={a.name} className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-slate-700/50 bg-space-900/40 px-3 py-2">
@@ -112,7 +112,7 @@ export default function Settings() {
             {(missions.data ?? []).map((m) => (
               <li key={m.id} className="flex items-center justify-between gap-3 rounded-lg border border-slate-700/50 bg-space-900/40 px-3 py-2">
                 <div className="min-w-0">
-                  <p className="truncate font-medium text-white">{m.name}</p>
+                  <p className="truncate font-medium text-primary">{m.name}</p>
                   <p className="text-xs text-slate-400">{m.code} · starts {formatDate(m.startDate)} · {m.status}</p>
                 </div>
                 {isAdmin && <Button size="sm" variant="ghost" icon={Pencil} aria-label={`Edit ${m.name}`} onClick={() => setMissionModal(m)} />}

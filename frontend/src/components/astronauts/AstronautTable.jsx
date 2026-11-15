@@ -12,7 +12,7 @@ export default function AstronautTable({ rows, loading, canEdit, canDelete, onEd
     { key: 'id', label: 'ID', sortable: true, render: (a) => <span className="font-mono text-xs text-slate-300">{a.id}</span> },
     { key: 'name', label: 'Name', sortable: true, render: (a) => (
       <div className="flex items-center gap-3">
-        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-accent to-cyan-500 text-xs font-bold text-white">{a.initials}</span>
+        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-status-info-bg text-xs font-bold text-status-info">{a.initials}</span>
         <span className="font-medium text-slate-100">{a.name}</span>
       </div>
     ) },

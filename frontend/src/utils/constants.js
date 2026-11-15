@@ -85,7 +85,7 @@ export const DATA_SOURCE_LABELS = {
   'actual-sensor': 'Actual sensor measurement',
   manual: 'Manually entered record',
   simulated: 'Simulated demonstration data',
-  'ai-generated': 'AI-generated insight',
+  'ai-generated': 'Rule-based analysis',
 };
 
 export const STATUS_OPTIONS = [

@@ -15,7 +15,7 @@ export default function InsightCard({ insight, onReview, canReview, compact = fa
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-xs font-mono text-slate-500">{insight.id}</p>
-          <h3 id={`ins-${insight.id}`} className="mt-0.5 text-base font-semibold text-white">{insight.metricName}</h3>
+          <h3 id={`ins-${insight.id}`} className="mt-0.5 text-base font-semibold text-primary">{insight.metricName}</h3>
           <p className="mt-0.5 text-xs text-slate-400">{insight.astronautId} · measured {formatDate(insight.measurementDate)}</p>
         </div>
         <div className="flex flex-wrap items-center gap-1.5">
@@ -34,7 +34,7 @@ export default function InsightCard({ insight, onReview, canReview, compact = fa
       {!compact && (
         <>
           <p className="mt-4 text-sm leading-relaxed text-slate-300">{insight.explanation}</p>
-          <p className="mt-3 rounded-lg border border-cyan-400/15 bg-accent/5 px-3 py-2 text-xs leading-relaxed text-cyan-100/90"><span className="font-semibold">Suggested next action: </span>{insight.suggestedAction}</p>
+          <p className="mt-3 rounded-lg border border-status-info-border bg-status-info-bg px-3 py-2 text-sm leading-relaxed text-status-info"><span className="font-semibold">Suggested next action: </span>{insight.suggestedAction}</p>
           {insight.narrative && (
             <p className="mt-3 text-xs italic text-slate-300">Optional narrative ({insight.narrative.source}): {insight.narrative.text}</p>
           )}

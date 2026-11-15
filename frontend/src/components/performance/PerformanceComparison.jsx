@@ -35,7 +35,7 @@ export default function PerformanceComparison({ baseline, current }) {
             const diff = b != null && c != null ? c - b : null;
             const pct = def.kind === 'percent' && b != null && c != null && b !== 0 ? ((c - b) / b) * 100 : null;
             return (
-              <tr key={k} className={bothMissing ? 'opacity-50' : ''}>
+              <tr key={k} className={bothMissing ? 'text-muted' : ''}>
                 <td className="table-td font-medium">{def.label}</td>
                 <td className="table-td text-right tabular-nums">{b == null ? '—' : `${formatNumber(b, def.decimals)} ${def.unit}`}</td>
                 <td className="table-td text-right tabular-nums">{c == null ? '—' : `${formatNumber(c, def.decimals)} ${def.unit}`}</td>

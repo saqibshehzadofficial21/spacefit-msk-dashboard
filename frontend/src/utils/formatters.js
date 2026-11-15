@@ -1,18 +1,21 @@
-const dateFmt = new Intl.DateTimeFormat('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' });
-const dateTimeFmt = new Intl.DateTimeFormat('en-GB', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+const dateFmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+const dateTimeFmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
 
 export const formatDate = (value) => (value ? dateFmt.format(new Date(value)) : '—');
 export const formatDateTime = (value) => (value ? `${dateTimeFmt.format(new Date(value))} UTC` : '—');
 export const isoDay = (value) => (value ? new Date(value).toISOString().slice(0, 10) : '');
 
 export function formatNumber(value, digits = 1) {
-  if (value === null || value === undefined || Number.isNaN(value)) return '—';
-  return Number(value).toLocaleString('en-GB', { maximumFractionDigits: digits, minimumFractionDigits: 0 });
+  if (value === null || value === undefined || !Number.isFinite(Number(value))) return '—';
+  const number = Number(value);
+  return (Object.is(number, -0) ? 0 : number).toLocaleString('en-GB', { maximumFractionDigits: digits, minimumFractionDigits: 0 });
 }
 
 export function formatSigned(value, digits = 1, suffix = '') {
-  if (value === null || value === undefined || Number.isNaN(value)) return '—';
-  const n = Number(value);
+  if (value === null || value === undefined || !Number.isFinite(Number(value))) return '—';
+  let n = Number(value);
+  if (Math.abs(n) < 0.5 * (10 ** -digits)) n = 0;
+  if (Object.is(n, -0)) n = 0;
   return `${n > 0 ? '+' : ''}${n.toLocaleString('en-GB', { maximumFractionDigits: digits })}${suffix}`;
 }
 

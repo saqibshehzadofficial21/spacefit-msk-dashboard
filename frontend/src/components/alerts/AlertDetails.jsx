@@ -60,23 +60,23 @@ export default function AlertDetails({ alert, onChanged, onDeleted }) {
     ['Difference', alert.difference === null || alert.difference === undefined ? '—' : formatNumber(alert.difference, 2)],
     ['Generated', formatDateTime(alert.generatedAt)],
     ['Review status', <StatusBadge key="r" tone="info">{ALERT_STATUSES.find((s) => s.value === alert.reviewStatus)?.label ?? alert.reviewStatus}</StatusBadge>],
-    ['Data source', alert.dataSource === 'ai-generated' ? 'AI-generated (rule-based engine)' : 'Manually entered'],
+    ['Data source', alert.dataSource === 'ai-generated' ? 'Rule-based analysis' : 'Manually entered'],
   ];
 
   return (
     <div className="flex flex-col gap-5">
-      <p className="rounded-xl border border-slate-700/50 bg-space-900/50 p-4 text-sm leading-relaxed text-slate-200">{alert.description}</p>
+      <p className="rounded-xl border border-border-subtle bg-surface-sunken p-4 text-sm leading-relaxed text-secondary">{alert.description}</p>
       <dl className="grid gap-3 sm:grid-cols-2">
         {rows.map(([k, v]) => (
-          <div key={k} className="rounded-lg border border-slate-800 bg-space-900/40 px-3 py-2">
+          <div key={k} className="rounded-lg border border-border-subtle bg-surface-sunken px-3 py-2">
             <dt className="label-muted">{k}</dt>
-            <dd className="mt-1 text-sm text-slate-100">{v}</dd>
+            <dd className="mt-1 text-sm text-primary">{v}</dd>
           </div>
         ))}
       </dl>
 
       {canReview && (
-        <div className="flex flex-col gap-3 border-t border-slate-700/40 pt-4">
+        <div className="flex flex-col gap-3 border-t border-border-subtle pt-4">
           <p className="label-muted">Workflow actions</p>
           <div className="flex flex-wrap gap-2">
             <Button size="sm" variant="secondary" icon={Eye} loading={busy} onClick={() => update({ reviewStatus: 'reviewed' }, 'Marked as reviewed')}>Mark as reviewed</Button>
@@ -94,13 +94,13 @@ export default function AlertDetails({ alert, onChanged, onDeleted }) {
       )}
 
       {alert.specialistNotes?.length > 0 && (
-        <div className="border-t border-slate-700/40 pt-4">
+        <div className="border-t border-border-subtle pt-4">
           <p className="label-muted mb-2">Specialist notes</p>
           <ul className="flex flex-col gap-2">
             {alert.specialistNotes.map((n) => (
-              <li key={n.id} className="rounded-lg bg-space-900/60 p-3 text-sm text-slate-200">
+              <li key={n.id} className="rounded-lg bg-surface-sunken p-3 text-sm text-secondary">
                 <p>{n.text}</p>
-                <p className="mt-1 text-[11px] text-slate-500">{n.role} · {formatDateTime(n.at)}</p>
+                <p className="mt-1 text-xs text-muted">{n.role} · {formatDateTime(n.at)}</p>
               </li>
             ))}
           </ul>

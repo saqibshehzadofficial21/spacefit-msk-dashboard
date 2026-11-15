@@ -5,10 +5,10 @@ import { Search } from 'lucide-react';
 export function Field({ label, htmlFor, error, hint, children, className = '' }) {
   return (
     <div className={`flex flex-col gap-1.5 ${className}`}>
-      <label htmlFor={htmlFor} className="text-sm font-medium text-slate-300">{label}</label>
+      <label htmlFor={htmlFor} className="text-sm font-medium text-secondary">{label}</label>
       {children}
-      {hint && !error && <p className="text-xs text-slate-500">{hint}</p>}
-      {error && <p className="text-xs text-red-300" role="alert">{error}</p>}
+      {hint && !error && <p className="text-xs text-muted">{hint}</p>}
+      {error && <p className="text-xs text-status-critical" role="alert">{error}</p>}
     </div>
   );
 }
@@ -32,7 +32,7 @@ export const Textarea = forwardRef(function Textarea({ error, className = '', ..
 export function SearchBox({ value, onChange, placeholder = 'Search…', label = 'Search', className = '', id = 'search-box' }) {
   return (
     <div className={`relative ${className}`}>
-      <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" aria-hidden="true" />
+      <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" aria-hidden="true" />
       <input
         id={id}
         type="search"
