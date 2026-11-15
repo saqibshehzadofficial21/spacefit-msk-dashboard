@@ -34,5 +34,14 @@
     "entity": "report",
     "entityId": "RPT-78dc6d35-8c75-4fd0-9c45-eb84e01cf72b",
     "summary": "muscle-performance: 1884 records"
+  },
+  {
+    "id": "AUD-bc77534e-59f3-4bcc-b1e7-7c6d15374ab1",
+    "timestamp": "2026-11-15T05:40:33.319Z",
+    "role": "administrator",
+    "action": "analyse",
+    "entity": "insight",
+    "entityId": "all",
+    "summary": "run RUN-3046ca29-4261-474a-9bc3-18ff356fb629: 36 insights, 0 alerts"
   }
 ]
